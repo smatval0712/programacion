@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class ejercicio3 {
     public static void main (String[] args){
         //Crea un array de 5 numeros enteros
