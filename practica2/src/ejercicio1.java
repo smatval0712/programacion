@@ -11,5 +11,8 @@ public class ejercicio1 {
         }
         //Muestra por consola el indice y el valor
         //indice -> valor
+        for (int i=0; i<10; i++){
+            System.out.println(i+"->"+arrayInt[i]);
+        }
     }
 }
