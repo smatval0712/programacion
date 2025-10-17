@@ -3,12 +3,13 @@ public class ejercicio3 {
         //Crea un array de 5 numeros enteros
         int[] n = {12,55,32,78,5};
         int menor = n[0];
-        //Muestra por consola el más pequeño de ellos
+        //Bucle comprobando qué número es menor
         for (int i=0; i<n.length; i++){
             if (n[i]< menor){
                 menor=n[i];
             }
         }
+        //Muestra por consola el más pequeño de ellos
         System.out.println("El número menor es "+menor);
     }
 }
