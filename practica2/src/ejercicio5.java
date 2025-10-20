@@ -13,10 +13,9 @@ public class ejercicio5 {
         int n = sc.nextInt();
         //Creamos el array a y establecemos que la n (numero que hemos metido por teclado) sea el tamaño del array
         int [] a=new int [n];
-        //Bucle pidiendo valores por teclado para guardarlos en cada posicion del array
+        //Bucle añadiendo números aleatorios a las posiciones del array
         for (int i=0;i< a.length;i++){
-            System.out.println("Introduce el siguiente valor");
-            a[i] = sc.nextInt();
+            a[i] = (int) (Math.random()*9);
         }
         //Bucle recorriendo el array mostrando las posiciones
         for (int i=0; i< a.length; i++) {
