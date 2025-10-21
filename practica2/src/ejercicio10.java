@@ -17,10 +17,11 @@ public class ejercicio10 {
         System.out.println("Introduzca un nombre para saber su nota: ");
         String nombre = sc.nextLine();
         double e=0;
-        for (int i=0; i< alumnos.length;i++)
-            if (nombre .equals(alumnos[i])) {
+        for (int i=0; i< alumnos.length;i++) {
+            if (nombre.equals(alumnos[i])) {
                 e = notas[i];
             }
+        }
         System.out.println("La nota del alumno es: "+e);
     }
 }
