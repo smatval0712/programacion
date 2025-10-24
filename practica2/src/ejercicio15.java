@@ -5,6 +5,7 @@
 //Ordene la lista de menor a mayor y la muestre por pantalla.
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ejercicio15 {
@@ -31,6 +32,8 @@ public class ejercicio15 {
                 }
             }
         }
+        //ordena la lista de menor a mayor
+        Collections.sort(lista);
         //Muestra el array lista
         System.out.println(lista);
 
