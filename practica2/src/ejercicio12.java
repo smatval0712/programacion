@@ -12,7 +12,7 @@ public class ejercicio12 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce su DNI sin letra: ");
         //Array con cada letra del abecedario como nos dice el ejercicio
-        String[] abecedario = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        String[] abecedario = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"};
         //Variables creadas dni para el dni que introducimos por teclado y n almacena la posicion del array para mostrar la letra
         int dni= sc.nextInt();
         int n= dni%23;
