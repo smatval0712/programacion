@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class ejercicio1 {
     public static void main (String[] args){
         //Crea un array de 10 posiciones de números pedidos por teclado
