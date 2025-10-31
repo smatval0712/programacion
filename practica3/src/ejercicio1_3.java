@@ -15,7 +15,8 @@ public class ejercicio1_3 {
         //Imprimimos mediante un bucle for doble las columnas, utilizamos un bucle doble porque el primero recorre las filas y el segundo recorre las columnas
         //Establecemos que cuando llegue a la ultima columna de la primera fila termine el bucle mediante un break, sino nos imprimiria lo mismo
         //tantas veces como filas que haya
-        System.out.print("Array num |");
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.print("| Array num |");
         for (int i = 0; i < doub.length; i++) {
             for (int j = 0; j < doub[i].length; j++) {
                 //Imprimimos columna en un espacio de 10 caracteres (%10s) seguido de un separador vertical (|).
@@ -23,11 +24,13 @@ public class ejercicio1_3 {
             }
             break;
         }
+        System.out.println();
+        System.out.print("-------------------------------------------------------------------------------");
         //Con otro bucle doble recorremos el array bidimensional
         System.out.println();
         for (int i=0; i< doub.length;i++) {
             //Imprime la etiqueta de la fila, por ejemplo, "Fila 0 |". El formato %-5d alinea el número de fila a la izquierda en un espacio de 5 caracteres.
-            System.out.printf("Fila %-5d|", i );
+            System.out.printf("| Fila %-5s|", i );
             for (int j = 0; j < doub[i].length; j++) {
                 //mediante este if indicamos que si lo que hay dentro de la posicion del array es distinto a null,
                 //imprimimos el valor que hay en la posición en formato %10.0f lo imprime como un número de
@@ -42,6 +45,8 @@ public class ejercicio1_3 {
             }
             //Metemos un salto de línea para terminar la fila y pasar a la siguiente
             System.out.println();
+            System.out.println("-------------------------------------------------------------------------------");
+
         }
     }
 }
