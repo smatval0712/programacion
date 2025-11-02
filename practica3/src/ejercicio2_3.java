@@ -61,7 +61,7 @@ public class ejercicio2_3 {
             System.out.printf("%2s", " Max ");
             System.out.printf("%-3d |", maxcolumna);
         }
-        //aqui imprimimos el valor de sumatotal que sera la suma total de todas las filas
+        //aqui imprimimos el valor de sumatotal que sera la suma total de todas las filas (sumafila)
         System.out.printf("%2s", " Total ");
         System.out.printf("%-3d |", sumatotal);
         //esta es la linea final de nuestra tabla
