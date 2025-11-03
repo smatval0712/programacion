@@ -46,6 +46,8 @@ public class ejercicio4_3 {
             System.out.println("-------------------------------------------------------------------");
         }
         //con este bucle doble recorremos el contenido del array por columnas comparando el contenido de estas para sacar el valor maximo
+        //en el primer bucle ponemos que i sea< abi[0].length para que se ejecute tantas veces como numero de columnas (celdas)
+        // que tenga la primera fila
         for (int i = 0; i < abi[0].length; i++) {
             //definimos la variable maxcolumna y establecemos que en principio tendra el valor de la primera posicion de la columna actual (j), que sera la primera posicion (0)
             int maxcolumna = abi[0][i];
