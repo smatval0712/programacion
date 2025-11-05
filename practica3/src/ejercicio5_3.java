@@ -8,30 +8,16 @@
 
 
 public class ejercicio5_3 {
-    //ponemos throws InterruptedException para poder "dormir" el programa por un tiempo
     public static void main(String[] args) {
-        //Creamos el array bidimensional de 4 filas y 5 columnas
+        //Creamos el array bidimensional de 6 filas y 10 columnas
         int[][] abi = new int[6][10];
-        //Con este bucle pedimos numeros por teclado y lo almacenamos en el array hasta que terminen las posiciones de este
-        System.out.println("Introduce números: ");
-        for (int i = 0; i < abi.length; i++) {
-            for (int j = 0; j < abi[i].length; j++) {
-                //genera un numero aleatorio entre 1 y 1999 a cada posicion del array
-                abi[i][j] =(int) (Math.random()*1999+1);
-            }
-        }
-        //esta es la linea de arriba de la tabla
-        System.out.println("-------------------------------------------------------------------");
-        //creamos una variable fuera de los bucles para poder mostrarla al final que sera la que guarde la suma total de los numeros que hemos metido en el array
         int sumatotal=0;
-        //Creamos un bucle que vaya recorriendo el array y mostrando el contenido de este en forma de tabla centrado y vaya calculando el total de cada fila
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------");
         for (int i = 0; i < abi.length; i++) {
-            //establecemos dentro del primer bucle pero fuera del segundo la variable sumafila a 0 ya que si la establecemos dentro del otro
-            //siempre tendra el valor total de la anterior fila y se ira sumando la siguiente sobre este valor
-            //en cambio si lo ponemos fuera del segundo bucle cada vez que termine una fila antes de empezar la siguiente volver a ser 0
             int sumafila = 0;
-            //Con este bucle dentro de otro bucle recorremos el contenido de cada fila del array, mostrando los valores de este y la suma total de la fila
             for (int j = 0; j < abi[i].length; j++) {
+                //genera un numero aleatorio entre 0 y 1000 a cada posicion del array
+                abi[i][j] =(int) (Math.random()*1001);
                 System.out.printf("%7d", abi[i][j]);
                 System.out.printf("%4s", "|");
                 //aqui establecemos que la variable sumatotal sea igual al valor que ya tiene mas el valor de cada posicion que recorre el bucle
@@ -44,15 +30,15 @@ public class ejercicio5_3 {
             System.out.printf("%-5d |", sumafila);
             System.out.println();
             //esto es cada linea de separación entre filas de nuestra tabla
-            System.out.println("-------------------------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
         }
-        //con este bucle doble recorremos el contenido del array por columnas comparando el contenido de estas para sacar el valor maximo
         int maxfila =0;
-        int max=0;
+        int max=abi [0][0];
         int maxcolumna=0;
-
+        int min= abi [0][0];
+        int minfila=0;
+        int mincolumna=0;
         for (int i = 0; i < abi.length; i++) {
-
             for (int j = 0; j < abi[i].length; j++) {
                 //con este if vamos comparando los valores de cada columna invirtiendo los parametros [j] por [i],
                 // ya que sino intentará acceder a indices (filas) que no existen
@@ -62,14 +48,18 @@ public class ejercicio5_3 {
                     maxfila =i;
                     maxcolumna =j;
                 }
+                else if (abi[i][j]< min) {
+                    min = abi[i][j];
+                    minfila = i;
+                    mincolumna = j;
+
+                }
             }
         }
-        System.out.print("El número máximo es " +max +" que está en la fila " +maxfila +" y en la columna " +maxcolumna);
-        //aqui imprimimos el valor de sumatotal que sera la suma total de todas las filas (sumafila)
-        System.out.printf("%2s", " Tot ");
-        System.out.printf("%-3d |", sumatotal);
-        //esta es la linea final de nuestra tabla
-        System.out.println();
-        System.out.println("-------------------------------------------------------------------");
+
+        System.out.println("- El número máximo es " +max +" que está en la fila " +maxfila +" y en la columna " +maxcolumna);
+        System.out.println("- El número mínimo es " +min +" que está en la fila " +minfila +" y en la columna " +mincolumna);
+        System.out.printf("%2s", "- El Total es ");
+        System.out.printf("%-3d ", sumatotal);
     }
 }
