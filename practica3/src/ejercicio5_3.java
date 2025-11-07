@@ -18,6 +18,7 @@ public class ejercicio5_3 {
             for (int j = 0; j < abi[i].length; j++) {
                 //genera un numero aleatorio entre 0 y 1000 a cada posicion del array
                 abi[i][j] =(int) (Math.random()*1001);
+                //Muestra las posiciones del array
                 System.out.printf("%7d", abi[i][j]);
                 System.out.printf("%4s", "|");
                 //aqui establecemos que la variable sumatotal sea igual al valor que ya tiene mas el valor de cada posicion que recorre el bucle
@@ -42,7 +43,6 @@ public class ejercicio5_3 {
             for (int j = 0; j < abi[i].length; j++) {
                 //con este if vamos comparando los valores de cada columna invirtiendo los parametros [j] por [i],
                 // ya que sino intentará acceder a indices (filas) que no existen
-                //y establecemos que si la posicion en la que estamos es mayor al valor actual de maxcolumna, lo almacene en ella como nuevo valor maximo
                 if (abi[i][j] > max) {
                     max = abi[i][j];
                     maxfila =i;
@@ -56,10 +56,21 @@ public class ejercicio5_3 {
                 }
             }
         }
-
+        //Bucle leyendo el array por columnas y sumando los valores para obtener la suma total de cada columna
+        for (int i = 0; i < abi[0].length; i++) {
+            int sumacolumna=0;
+            for (int j = 0; j < abi.length; j++) {
+                sumacolumna+=abi[j][i];
+            }
+            System.out.printf("%4s", "Σ=");
+            System.out.printf("%-5d |", sumacolumna);
+        }
+        System.out.printf("%5s", "Tot= ");
+        System.out.printf("%-1d |", sumatotal);
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------");
         System.out.println("- El número máximo es " +max +" que está en la fila " +maxfila +" y en la columna " +maxcolumna);
         System.out.println("- El número mínimo es " +min +" que está en la fila " +minfila +" y en la columna " +mincolumna);
-        System.out.printf("%2s", "- El Total es ");
-        System.out.printf("%-3d ", sumatotal);
+
     }
 }
