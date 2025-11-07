@@ -25,7 +25,7 @@ public class ejercicio6_3 {
                             abi [k][l]=0;
                         }
                     }
-               }
+                }
             }
         }
         //Bucle mostrando el array en forma de tabla
@@ -71,11 +71,12 @@ public class ejercicio6_3 {
                     maxfila =i;
                     maxcolumna =j;
                 }
-                else if (abi[i][j]< min) {
-                    min = abi[i][j];
-                    minfila = i;
-                    mincolumna = j;
-
+                else if (abi[i][j]!=0) {
+                    if (abi[i][j] < min) {
+                        min = abi[i][j];
+                        minfila = i;
+                        mincolumna = j;
+                    }
                 }
             }
         }
