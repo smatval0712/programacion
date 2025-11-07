@@ -9,13 +9,17 @@ public class ejercicio6_3 {
         int sumatotal=0;
 
         for (int i = 0; i < abi.length; i++) {
-            for (int j = 0; j < abi[0].length; j++) {
+            for (int j = 0; j < abi[i].length; j++) {
+                //establecemos que rellene las posiciones con números aleatorios entre 20 y 40
                 abi[i][j]= (int) (Math.random()*21)+20;
             }
         }
+        //Bucle para que compare todas las posiciones del array y a las que estén repetidas le ponga 0
         for (int i = 0; i < abi.length; i++) {
             for (int j = 0; j < abi[i].length; j++) {
                 for (int k = i; k < abi.length; k++) {
+                    //Establecemos en el valor de la l un if de que si k es igual a i, entonces l vale el valor de j + 1 y si no vale 0, de esta
+                    // manera nos aseguramos de que al pasar a la siguiente fila, también coga el valor de la primera columna
                     for (int l = (k == i ? j + 1 : 0); l < abi[k].length; l++) {
                         if(abi[i][j] == abi[k][l]){
                             abi [k][l]=0;
@@ -24,14 +28,21 @@ public class ejercicio6_3 {
                }
             }
         }
-
+        //Bucle mostrando el array en forma de tabla
         System.out.println("--------------------------------------------------------------------------------------------------------------------------");
         for (int i = 0; i < abi.length; i++) {
             int sumafila = 0;
             for (int j = 0; j < abi[i].length; j++) {
-                //Muestra las posiciones del array
-                System.out.printf("%7d", abi[i][j]);
-                System.out.printf("%4s", "|");
+                //Este if muestra espacios en blanco si el contenido de la posicion del array es 0
+                //Y si no, pues muestra su contenido
+                if (abi [i][j]==0){
+                    System.out.printf("%10s|","  ");
+                }
+                else{
+                    System.out.printf("%6d", abi[i][j]);
+                    System.out.printf("%5s", "|");
+                }
+
                 //aqui establecemos que la variable sumatotal sea igual al valor que ya tiene mas el valor de cada posicion que recorre el bucle
                 sumafila += abi[i][j];
             }
