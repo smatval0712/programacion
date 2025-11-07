@@ -88,7 +88,7 @@ public class ejercicio6_3 {
             System.out.printf("%4s", "Σ=");
             System.out.printf("%-5d |", sumacolumna);
         }
-        System.out.printf("%5s", "Tot= ");
+        System.out.printf("%5s", "  Tot= ");
         System.out.printf("%-1d |", sumatotal);
         System.out.println();
         System.out.println("--------------------------------------------------------------------------------------------------------------------------");
