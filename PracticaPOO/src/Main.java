@@ -15,7 +15,10 @@ public class Main {
         System.out.println(user2.getEmail());
         //llamada a checkusuario
         System.out.println(user2.checkUsuario("Alberto@chulo","123456"));
-
+    }
+    public static void validarRegistro(Usuario[] usuarios){
 
     }
 }
+
+
