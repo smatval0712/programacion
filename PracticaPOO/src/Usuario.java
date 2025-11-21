@@ -38,6 +38,7 @@ public class Usuario {
 
     //set para todos los atributos
     public void setNombre(String nuevoNombre) {
+
         this.nombre = nuevoNombre;
     }
     public void setApellidos(String nuevoApellidos) {

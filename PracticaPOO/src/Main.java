@@ -17,7 +17,9 @@ public class Main {
         System.out.println(user2.checkUsuario("Alberto@chulo","123456"));
     }
     public static void validarRegistro(Usuario[] usuarios){
-
+        for (int i = 0; i < usuarios.length; i++) {
+            System.out.println(usuarios[i].getNombre());
+        }
     }
 }
 
