@@ -37,4 +37,8 @@ public class Hospital {
     public void setAreas(ArrayList<Areas> areas) {
         this.areas = areas;
     }
+    //funcion para añadir area cuando se añade un medico
+    public void añadirAreas(Areas areaNueva){
+        this.areas.add(areaNueva);
+    }
 }
