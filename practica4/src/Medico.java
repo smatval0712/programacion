@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Medico {
     private String dni;
     private String nombre;
@@ -64,11 +66,42 @@ public class Medico {
         this.area = area;
     }
 
-    //funcion para calcular sueldo neto
+    //1.- funcion para calcular sueldo neto
     public Double sueldoNeto(Double retencion){
         return this.sueldo-(this.sueldo*(retencion/100));
     }
-    //funcion para calcular años de antigüedad
+    //2.- funcion para calcular años de antigüedad
+    public Integer getAniosAntiguedad(){
+        //obtener la fecha actual con java.time
+        LocalDate fechaActual=LocalDate.now();
+        //Obtener el año actual
+        int anioActual = fechaActual.getYear();
+        //la funcion devuelve el resultado del año actual - el año de inicio para saber cuantos años lleva trabajando
+        return anioActual-this.fechaInicio;
+    }
+    //3.- Calculo de impuestos anuales
+    public Double impuestosAnuales(Double tasaImpositiva){
+        return (this.sueldo*(tasaImpositiva/100)*12);
+    }
+    //4.- Comprobación de edad
+    public boolean mayorEdad(int mayoriaEdad){
+        return this.edad>=mayoriaEdad;
+    }
+    //5.- Calculo aumento de sueldo
+    public Double proximoAumento(double porcentajeAumento,int aniosRequeridos){
+        if (getAniosAntiguedad()>= aniosRequeridos) {
+            return this.sueldo + (this.sueldo*(porcentajeAumento/100));
+        }
+        else{
+            return this.sueldo;
+        }
+    }
+    //6.- Gestion de area
+    public void cambiarArea(Areas nuevaArea){
+        this.area.setNumMedicos(area.getNumMedicos()-1);
+        nuevaArea.nuevoMedico();
+        this.area=nuevaArea;
+    }
 
 }
 

@@ -59,4 +59,18 @@ public class Areas {
         numMedicos++;
     }
 
+    //1.- comprobación y comparación
+    public String compararMedicos(Areas otraArea){
+        if (this.numMedicos > otraArea.getNumMedicos()){
+            return this.nombre;
+        }
+        else {
+            return otraArea.getNombre();
+        }
+    }
+
+    //2.- Cálculo de capacidad
+    public Integer capacidadRestante(Integer capcidadMaxima){
+        if (this.numMedicos)
+    }
 }
