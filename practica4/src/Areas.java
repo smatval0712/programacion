@@ -70,7 +70,7 @@ public class Areas {
     }
 
     //2.- Cálculo de capacidad
-    public Integer capacidadRestante(Integer capcidadMaxima){
-        if (this.numMedicos)
+    public Integer capacidadRestante(Integer capacidadMaxima){
+        return this.numMedicos<capacidadMaxima?capacidadMaxima-this.numMedicos:0;
     }
 }
