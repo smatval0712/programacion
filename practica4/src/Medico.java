@@ -102,7 +102,4 @@ public class Medico {
         nuevaArea.nuevoMedico();
         this.area=nuevaArea;
     }
-
 }
-
-

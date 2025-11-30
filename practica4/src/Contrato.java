@@ -1,5 +1,7 @@
 import com.sun.management.HotSpotDiagnosticMXBean;
 
+import java.time.LocalDate;
+
 public class Contrato {
     private Integer fechaCreacion;
     private Medico medico;
@@ -31,4 +33,16 @@ public class Contrato {
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
+
+    // 1.- Comprobación de año, devuelve true si la fecha de creación del contrato coincide con el año dado
+    public boolean esDeAnio(int anio){
+        return anio==this.medico.getFechaInicio()?true:false;
+    }
+    //2.- Cálculo de vigencia, devuelve el número de días transcurridos desde la creación del contrato
+    public Integer diasDesdeCreacion(){
+        LocalDate fechaActual=LocalDate.now();
+        int anioActual=fechaActual.getYear();
+        return anioActual-this.fechaCreacion;
+    }
+
 }

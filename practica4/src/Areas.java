@@ -3,12 +3,12 @@ public class Areas {
     //Atributos
     private String nombre;
     private String identificador;
-    private String planta;
+    private Integer planta;
     private Hospital hospital;
     private Integer numMedicos;
 
     //constructor
-    public Areas (String nombre, String identificador,String planta,Hospital hospital){
+    public Areas (String nombre, String identificador,Integer planta,Hospital hospital){
         this.nombre=nombre;
         this.identificador=identificador;
         this.planta=planta;
@@ -23,7 +23,7 @@ public class Areas {
     public String getIdentificador(){
         return identificador;
     }
-    public String getPlanta(){
+    public Integer getPlanta(){
         return planta;
     }
     public Hospital getHospital(){
@@ -42,7 +42,7 @@ public class Areas {
         this.identificador = identificador;
     }
 
-    public void setPlanta(String planta) {
+    public void setPlanta(Integer planta) {
         this.planta = planta;
     }
 
