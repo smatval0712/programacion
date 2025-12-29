@@ -1,13 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+package com.juego;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+import com.juego.modelo.Estadisticas;
+import com.juego.razas.Elfo;
+import com.juego.razas.Humano;
+import com.juego.razas.Raza;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //codigo para probar si funcionan las diferentes razas
+        Estadisticas e = new Estadisticas();
+        Raza h = new Humano();
+
+        h.rellenarEstadisticas(e);
+
+        System.out.println("Fuerza: " + e.getFuerza());
+        System.out.println("Inteligencia: " + e.getInteligencia());
+        System.out.println("Destreza: " + e.getDestreza());
+        System.out.println("Vida: " + e.getVida());
     }
 }
