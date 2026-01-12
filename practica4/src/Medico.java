@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Medico {
     private String dni;
@@ -8,6 +9,7 @@ public class Medico {
     private Double sueldo;
     private Integer fechaInicio;
     private Areas area;
+    private ArrayList<Paciente> pacientes;
 
     //Constructor
     public Medico(String dni, String nombre, Integer edad, String sexo, Double sueldo, Integer fechaInicio, Areas area) {
@@ -18,6 +20,7 @@ public class Medico {
         this.sueldo=sueldo;
         this.fechaInicio=fechaInicio;
         this.area=area;
+        this.pacientes=new ArrayList<>();
     }
 
     //get
@@ -42,6 +45,9 @@ public class Medico {
     public Areas getArea() {
         return area;
     }
+    public ArrayList<Paciente> getPacientes() {
+        return pacientes;
+    }
 
     //set
     public void setDni(String dni) {
@@ -64,6 +70,9 @@ public class Medico {
     }
     public void setArea(Areas area) {
         this.area = area;
+    }
+    public void setPacientes(ArrayList<Paciente> pacientes) {
+        this.pacientes = pacientes;
     }
 
     //1.- funcion para calcular sueldo neto
@@ -101,5 +110,18 @@ public class Medico {
         this.area.setNumMedicos(area.getNumMedicos()-1);
         nuevaArea.nuevoMedico();
         this.area=nuevaArea;
+    }
+
+    //agregarPacientes
+    public void añadirPaciente(Paciente nuevoPaciente){
+        this.pacientes.add(nuevoPaciente);
+    }
+    //Metodo obtener numero pacientes
+    public Integer getNumeroPacientesAsignados(){
+        int contadorPacientes=0;
+        for (Paciente p:pacientes){
+            contadorPacientes++;
+        }
+        return contadorPacientes;
     }
 }

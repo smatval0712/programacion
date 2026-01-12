@@ -8,12 +8,11 @@ public class Main {
     public static ArrayList<Medico> medicos = new ArrayList<>();
     public static ArrayList<Contrato> contratos = new ArrayList<>();
 
-    //realiza la carga de datos y ejecuta el menu
     public static void main(String[] args) {
         cargarDatos();
-        MenuGestor.ejecutarMenuGestor();
-    }
+        //MenuGestor.ejecutarMenuGestor();
 
+    }
     //funcion que realiza la carga de los datos
     public static void cargarDatos() {
 
@@ -62,9 +61,32 @@ public class Main {
         contratos.add(c1);
         contratos.add(c2);
         contratos.add(c3);
+
+        //añadir pacientes
+        Paciente p1=new Paciente("32224455y","Alberto Perez","hombre");
+        Paciente p2=new Paciente("32566455y","Carlos Dominguez","hombre");
+
+        //asignar pacientes a medicos
+        m1.añadirPaciente(p1);
+        m1.añadirPaciente(p2);
+
+        //añadir equipamientos
+        Equipamiento e1=new Equipamiento("Tijera","a123",2020);
+        Equipamiento e2=new Equipamiento("Guantes","a1321",2010);
+        Equipamiento e3=new Equipamiento("Bisturi","a222",2016);
+
+
+        //añadir equipamientos a areas
+        a1.añadirEquipamiento(e1);
+        a1.añadirEquipamiento(e2);
+        a1.añadirEquipamiento(e3);
+
+        for(Equipamiento e : a1.getEquipamientos()){
+            System.out.println(e.getNombre() +" " +e.esAntiguo());
+        }
     }
 
-    //funcion que inicia el menu gestor
+
 
     //Funcion para buscar medico por dni
     public static Medico buscarMedico(String dni) {

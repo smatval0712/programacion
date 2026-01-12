@@ -11,10 +11,10 @@ public class Personaje {
     private Clase clase;
 
     //constructor
-    public Personaje(String nombre, Raza raza, Clase clase){
+    public Personaje(String nombre, Raza raza, Clase clase, Estadisticas estadisticas){
         this.nombre=nombre;
         //Esta linea crea un nuevo objeto de la clase Estadisticas y lo guarda en Personaje, es como cuando hacemos en el main Estadisticas e = new Estadisticas();
-        this.estadisticas = new Estadisticas();
+        this.estadisticas = estadisticas;
         //Añadimos el tipo de raza al personaje
         this.raza= raza;
         //llamamos a la funcion de la raza de rellenar estadisticas
@@ -23,5 +23,21 @@ public class Personaje {
         this.clase=clase;
         //llamamos a la funcion de bonificadorEstadisticas de la clase para que se apliquen las bonificaciones
         clase.bonificadorEstadisticas(this.estadisticas);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Estadisticas getEstadisticas() {
+        return estadisticas;
+    }
+
+    public Raza getRaza() {
+        return raza;
+    }
+
+    public Clase getClase() {
+        return clase;
     }
 }

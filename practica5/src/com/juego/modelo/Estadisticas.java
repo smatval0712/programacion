@@ -38,9 +38,7 @@ public class Estadisticas {
         return vida;
     }
 
-    public int getVidaMaxima() {
-        return vidaMaxima;
-    }
+    public int getVidaMaxima() { return vidaMaxima; }
 
     //metodos set
     public void setFuerza(int fuerza) {
@@ -62,4 +60,5 @@ public class Estadisticas {
     public void setVidaMaxima(int vidaMaxima) {
         this.vidaMaxima = vidaMaxima;
     }
+
 }

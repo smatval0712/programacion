@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Areas {
 
     //Atributos
@@ -6,6 +8,7 @@ public class Areas {
     private Integer planta;
     private Hospital hospital;
     private Integer numMedicos;
+    private ArrayList<Equipamiento> equipamientos;
 
     //constructor
     public Areas (String nombre, String identificador,Integer planta,Hospital hospital){
@@ -14,6 +17,7 @@ public class Areas {
         this.planta=planta;
         this.hospital=hospital;
         this.numMedicos=0;
+        this.equipamientos=new ArrayList<>();
     }
 
     //get
@@ -33,6 +37,10 @@ public class Areas {
         return numMedicos;
     }
 
+    public ArrayList<Equipamiento> getEquipamientos() {
+        return equipamientos;
+    }
+
     //set
     public void setNombre (String nombre){
         this.nombre=nombre;
@@ -48,6 +56,10 @@ public class Areas {
 
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
+    }
+
+    public void setEquipamientos(ArrayList<Equipamiento> equipamientos) {
+        this.equipamientos = equipamientos;
     }
 
     public void setNumMedicos(Integer numMedicos) {
@@ -73,4 +85,11 @@ public class Areas {
     public Integer capacidadRestante(Integer capacidadMaxima){
         return this.numMedicos<capacidadMaxima?capacidadMaxima-this.numMedicos:0;
     }
+
+
+
+    public void añadirEquipamiento(Equipamiento nuevoEquipamiento){
+        this.equipamientos.add(nuevoEquipamiento);
+    }
 }
+
