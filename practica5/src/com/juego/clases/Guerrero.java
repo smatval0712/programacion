@@ -14,6 +14,6 @@ public class Guerrero implements Clase{
     //funcion añadiendo bonificaciones
     public void bonificadorEstadisticas(Estadisticas estadisticas) {
         estadisticas.setFuerza(estadisticas.getFuerza()+3);
-        estadisticas.setVidaMaxima(120);
+        estadisticas.setVida(estadisticas.getVida()+120);
     }
 }

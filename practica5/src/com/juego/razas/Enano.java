@@ -20,4 +20,7 @@ public class Enano implements Raza{
         estadisticas.setDestreza(4);
         estadisticas.setVida(110);
     }
+    public void asignarHabilidades(){
+
+    }
 }

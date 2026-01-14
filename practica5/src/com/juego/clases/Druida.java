@@ -15,6 +15,6 @@ public class Druida implements Clase {
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setFuerza(estadisticas.getFuerza()+2);
         estadisticas.setInteligencia(estadisticas.getInteligencia()+1);
-        estadisticas.setVidaMaxima(100);
+        estadisticas.setVida(estadisticas.getVida()+100);
     }
 }

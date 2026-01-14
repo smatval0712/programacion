@@ -8,7 +8,6 @@ public class Estadisticas {
     private int inteligencia;
     private int destreza;
     private int vida;
-    private int vidaMaxima;
 
 
     //constructor vacio, ya que no podemos asignarles los valores de estadisticas porque no los sabemos,
@@ -18,7 +17,6 @@ public class Estadisticas {
         this.inteligencia=0;
         this.destreza=0;
         this.vida=0;
-        this.vidaMaxima=0;
     }
 
     //metodos get
@@ -38,7 +36,6 @@ public class Estadisticas {
         return vida;
     }
 
-    public int getVidaMaxima() { return vidaMaxima; }
 
     //metodos set
     public void setFuerza(int fuerza) {
@@ -55,10 +52,6 @@ public class Estadisticas {
 
     public void setVida(int vida) {
         this.vida = vida;
-    }
-
-    public void setVidaMaxima(int vidaMaxima) {
-        this.vidaMaxima = vidaMaxima;
     }
 
 }

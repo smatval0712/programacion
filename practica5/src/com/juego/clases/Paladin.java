@@ -15,6 +15,6 @@ public class Paladin implements Clase {
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setFuerza(estadisticas.getFuerza()+2);
         estadisticas.setInteligencia(estadisticas.getInteligencia()+1);
-        estadisticas.setVidaMaxima(115);
+        estadisticas.setVida(estadisticas.getVida()+115);
     }
 }

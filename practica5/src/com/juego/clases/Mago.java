@@ -14,6 +14,6 @@ public class Mago implements Clase {
     //funcion añadiendo bonificaciones
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setInteligencia(estadisticas.getInteligencia()+3);
-        estadisticas.setVidaMaxima(90);
+        estadisticas.setVida(estadisticas.getVida()+90);
     }
 }

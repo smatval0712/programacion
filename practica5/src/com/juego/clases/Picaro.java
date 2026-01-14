@@ -14,6 +14,6 @@ public class Picaro implements Clase {
     //funcion añadiendo bonificaciones
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setDestreza(estadisticas.getDestreza()+3);
-        estadisticas.setVidaMaxima(105);
+        estadisticas.setVida(estadisticas.getVida()+105);
     }
 }

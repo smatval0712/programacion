@@ -14,6 +14,6 @@ public class Sacerdote implements Clase {
     //funcion añadiendo bonificaciones
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setInteligencia(estadisticas.getInteligencia()+3);
-        estadisticas.setVidaMaxima(95);
+        estadisticas.setVida(estadisticas.getVida()+95);
     }
 }

@@ -15,6 +15,6 @@ public class Monje implements Clase {
     public void bonificadorEstadisticas(Estadisticas estadisticas){
         estadisticas.setFuerza(estadisticas.getFuerza()+2);
         estadisticas.setDestreza(estadisticas.getDestreza()+1);
-        estadisticas.setVidaMaxima(110);
+        estadisticas.setVida(estadisticas.getVida()+110);
     }
 }
