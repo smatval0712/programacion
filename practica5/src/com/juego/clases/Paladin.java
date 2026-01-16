@@ -1,13 +1,13 @@
 package com.juego.clases;
+import com.juego.habilidades.*;
 import com.juego.modelo.Estadisticas;
+import com.juego.modelo.Personaje;
+
+import java.util.ArrayList;
 
 public class Paladin implements Clase {
-    private String nombre;
-    private Estadisticas estadisticas;
 
-    public Paladin(String nombre, Estadisticas estadisticas){
-        this.nombre=nombre;
-        this.estadisticas=estadisticas;
+    public Paladin(){
     }
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
@@ -16,5 +16,12 @@ public class Paladin implements Clase {
         estadisticas.setFuerza(estadisticas.getFuerza()+2);
         estadisticas.setInteligencia(estadisticas.getInteligencia()+1);
         estadisticas.setVida(estadisticas.getVida()+115);
+    }
+    @Override
+    public void agregarHabilidad(Personaje personaje) {
+        ArrayList<Habilidades> listaHabilidades = personaje.getListaHabilidades();
+        listaHabilidades.add(new GolpeContundente());
+        listaHabilidades.add(new Flechazo());
+        listaHabilidades.add(new CuracionMedia());
     }
 }

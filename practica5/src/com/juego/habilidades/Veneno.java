@@ -1,15 +1,15 @@
 package com.juego.habilidades;
 
-public class GolpeArmonico implements Habilidades{
+public class Veneno implements Habilidades {
     private String nombre;
     private int daño;
     private int usos;
 
     //constructor
-    public GolpeArmonico() {
-        this.nombre = "Golpe Armónico";
-        this.daño = 35;
-        this.usos = 5;
+    public Veneno() {
+        this.nombre = "Veneno";
+        this.daño = 110;
+        this.usos = 1;
     }
 
     //get y set
@@ -42,4 +42,3 @@ public class GolpeArmonico implements Habilidades{
         this.usos--;
     }
 }
-

@@ -1,13 +1,14 @@
 package com.juego.clases;
+import com.juego.habilidades.*;
 import com.juego.modelo.Estadisticas;
+import com.juego.modelo.Personaje;
+
+import java.util.ArrayList;
 
 public class Monje implements Clase {
-    private String nombre;
-    private Estadisticas estadisticas;
 
-    public Monje(String nombre, Estadisticas estadisticas){
-        this.nombre=nombre;
-        this.estadisticas=estadisticas;
+    public Monje(){
+
     }
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
@@ -16,5 +17,13 @@ public class Monje implements Clase {
         estadisticas.setFuerza(estadisticas.getFuerza()+2);
         estadisticas.setDestreza(estadisticas.getDestreza()+1);
         estadisticas.setVida(estadisticas.getVida()+110);
+    }
+
+    @Override
+    public void agregarHabilidad(Personaje personaje) {
+        ArrayList<Habilidades> listaHabilidades = personaje.getListaHabilidades();
+        listaHabilidades.add(new Rezo());
+        listaHabilidades.add(new RayoDivino());
+        listaHabilidades.add(new CuracionMayor());
     }
 }

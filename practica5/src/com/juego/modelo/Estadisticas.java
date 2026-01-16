@@ -54,4 +54,13 @@ public class Estadisticas {
         this.vida = vida;
     }
 
+    @Override
+    public String toString() {
+        return "Estadisticas{" +
+                "fuerza=" + fuerza +
+                ", inteligencia=" + inteligencia +
+                ", destreza=" + destreza +
+                ", vida=" + vida +
+                '}';
+    }
 }

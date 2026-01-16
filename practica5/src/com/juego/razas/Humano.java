@@ -3,12 +3,9 @@ import com.juego.modelo.Estadisticas;
 
 //implementamos la clase raza en cada raza que creamos para que siga
 public class Humano implements Raza{
-    private String nombre;
-    private Estadisticas estadisticas;
 
-    public Humano(String nombre, Estadisticas estadisticas){
-        this.nombre=nombre;
-        this.estadisticas=estadisticas;
+    public Humano(){
+
     }
 
     //ponemos el override para indicar que vamos a poner el contenido real de la plantilla que teniamos en la interfaz raza

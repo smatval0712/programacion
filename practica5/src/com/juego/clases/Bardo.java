@@ -1,21 +1,18 @@
 package com.juego.clases;
-import com.juego.habilidades.ChillidoEstrondoso;
-import com.juego.habilidades.CuracionMayor;
-import com.juego.habilidades.GolpeArmonico;
-import com.juego.habilidades.Habilidades;
+import com.juego.habilidades.*;
 import com.juego.modelo.Estadisticas;
 import com.juego.modelo.Personaje;
 
 import java.util.ArrayList;
 
 public class Bardo implements Clase {
-    private String nombre;
-    private Estadisticas estadisticas;
 
-    public Bardo(String nombre, Estadisticas estadisticas){
-        this.nombre=nombre;
-        this.estadisticas=estadisticas;
+    //constructor
+    public Bardo(){
+
     }
+
+
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
     //funcion añadiendo bonificaciones
@@ -29,6 +26,6 @@ public class Bardo implements Clase {
         ArrayList<Habilidades> listaHabilidades = personaje.getListaHabilidades();
         listaHabilidades.add(new GolpeArmonico());
         listaHabilidades.add(new ChillidoEstrondoso());
-        listaHabilidades.add(new CuracionMayor());
+        listaHabilidades.add(new CuracionMedia());
     }
 }

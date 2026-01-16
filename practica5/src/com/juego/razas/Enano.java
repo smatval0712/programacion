@@ -3,12 +3,9 @@ import com.juego.modelo.Estadisticas;
 
 //implementamos la clase raza en cada raza que creamos para que siga
 public class Enano implements Raza{
-    private String nombre;
-    private Estadisticas estadisticas;
 
-    public Enano (String nombre, Estadisticas estadisticas){
-        this.nombre=nombre;
-        this.estadisticas=estadisticas;
+    public Enano (){
+
     }
 
     //ponemos el override para indicar que vamos a poner el contenido real de la plantilla que teniamos en la interfaz raza
@@ -20,7 +17,5 @@ public class Enano implements Raza{
         estadisticas.setDestreza(4);
         estadisticas.setVida(110);
     }
-    public void asignarHabilidades(){
 
-    }
 }
