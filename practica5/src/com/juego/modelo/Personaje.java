@@ -1,6 +1,9 @@
 package com.juego.modelo;
 import com.juego.clases.Clase;
+import com.juego.habilidades.Habilidades;
 import com.juego.razas.Raza;
+
+import java.util.ArrayList;
 
 //creamos la clase personaje igualmente que habilidades antes para saber con qué personajes estamos jugando la partida
 public class Personaje {
@@ -9,22 +12,25 @@ public class Personaje {
     private Estadisticas estadisticas;
     private Raza raza;
     private Clase clase;
+    private ArrayList <Habilidades> listaHabilidades;
 
     //constructor
     public Personaje(String nombre, Raza raza, Clase clase, Estadisticas estadisticas){
         this.nombre=nombre;
         //Esta linea crea un nuevo objeto de la clase Estadisticas y lo guarda en Personaje, es como cuando hacemos en el main Estadisticas e = new Estadisticas();
-        this.estadisticas = estadisticas;
+        this.estadisticas = new Estadisticas();
         //Añadimos el tipo de raza al personaje
         this.raza= raza;
-        //llamamos a la funcion de la raza de rellenar estadisticas
-        raza.rellenarEstadisticas(this.estadisticas);
         //Añadimos la clase
         this.clase=clase;
+        this.listaHabilidades= new ArrayList<>();
+        //llamamos a la funcion de la raza de rellenar estadisticas
+        raza.rellenarEstadisticas(this.estadisticas);
         //llamamos a la funcion de bonificadorEstadisticas de la clase para que se apliquen las bonificaciones
         clase.bonificadorEstadisticas(this.estadisticas);
     }
 
+    //get
     public String getNombre() {
         return nombre;
     }
@@ -39,5 +45,30 @@ public class Personaje {
 
     public Clase getClase() {
         return clase;
+    }
+
+    public ArrayList<Habilidades> getListaHabilidades() {
+        return listaHabilidades;
+    }
+
+    //set
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEstadisticas(Estadisticas estadisticas) {
+        this.estadisticas = estadisticas;
+    }
+
+    public void setRaza(Raza raza) {
+        this.raza = raza;
+    }
+
+    public void setClase(Clase clase) {
+        this.clase = clase;
+    }
+
+    public void setListaHabilidades(ArrayList<Habilidades> listaHabilidades) {
+        this.listaHabilidades = listaHabilidades;
     }
 }
