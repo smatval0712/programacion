@@ -3,13 +3,13 @@ package com.juego.habilidades;
 public class Espadazo implements Habilidades{
     private String nombre;
     private int usos;
-    private int danio;
+    private int daño;
 
     //constructor
     public Espadazo() {
         this.nombre = "Espadazo";
         this.usos = 5;
-        this.danio = 40;
+        this.daño = 40;
     }
     //get
 
@@ -21,8 +21,8 @@ public class Espadazo implements Habilidades{
         return usos;
     }
 
-    public int getDanio() {
-        return danio;
+    public int getDaño() {
+        return daño;
     }
 
     //set
@@ -35,12 +35,21 @@ public class Espadazo implements Habilidades{
         this.usos = usos;
     }
 
-    public void setDanio(int danio) {
-        this.danio = danio;
+    public void setDaño(int daño) {
+        this.daño = daño;
     }
 
     @Override
     public void usarHabilidad() {
         this.usos--;
+    }
+
+    @Override
+    public String toString() {
+        return "Espadazo{" +
+                "nombre='" + nombre + '\'' +
+                ", usos=" + usos +
+                ", daño=" + daño +
+                '}';
     }
 }

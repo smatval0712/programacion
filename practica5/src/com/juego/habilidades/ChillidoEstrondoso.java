@@ -41,4 +41,13 @@ public class ChillidoEstrondoso implements Habilidades {
     public void usarHabilidad() {
         this.usos--;
     }
+
+    @Override
+    public String toString() {
+        return "ChillidoEstrondoso{" +
+                "nombre='" + nombre + '\'' +
+                ", daño=" + daño +
+                ", usos=" + usos +
+                '}';
+    }
 }

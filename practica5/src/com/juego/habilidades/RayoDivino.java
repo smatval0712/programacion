@@ -41,4 +41,13 @@ public class RayoDivino implements Habilidades {
     public void usarHabilidad() {
         this.usos--;
     }
+
+    @Override
+    public String toString() {
+        return "RayoDivino{" +
+                "nombre='" + nombre + '\'' +
+                ", daño=" + daño +
+                ", usos=" + usos +
+                '}';
+    }
 }

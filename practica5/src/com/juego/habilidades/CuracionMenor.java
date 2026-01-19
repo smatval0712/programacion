@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class CuracionMenor implements Habilidades {
     private String nombre;
-    private int cura;
+    private int daño;
     private int usos;
 
     //constructor
     public CuracionMenor() {
         this.nombre = "Poción de curación menor";
-        this.cura = 40;
+        this.daño = 40;
         this.usos = 3;
     }
 
@@ -22,11 +22,11 @@ public class CuracionMenor implements Habilidades {
     }
 
     public int getDaño() {
-        return cura;
+        return daño;
     }
 
     public void setDaño(int daño) {
-        this.cura = daño;
+        this.daño = daño;
     }
 
     public int getUsos() {
@@ -40,5 +40,14 @@ public class CuracionMenor implements Habilidades {
     @Override
     public void usarHabilidad() {
         this.usos--;
+    }
+
+    @Override
+    public String toString() {
+        return "CuracionMenor{" +
+                "nombre='" + nombre + '\'' +
+                ", cura=" + daño +
+                ", usos=" + usos +
+                '}';
     }
 }

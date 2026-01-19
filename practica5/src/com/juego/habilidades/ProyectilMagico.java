@@ -41,4 +41,13 @@ public class ProyectilMagico implements Habilidades {
     public void usarHabilidad() {
         this.usos--;
     }
+
+    @Override
+    public String toString() {
+        return "ProyectilMagico{" +
+                "nombre='" + nombre + '\'' +
+                ", daño=" + daño +
+                ", usos=" + usos +
+                '}';
+    }
 }

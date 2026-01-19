@@ -41,4 +41,13 @@ public class GolpeContundente implements Habilidades {
     public void usarHabilidad() {
         this.usos--;
     }
+
+    @Override
+    public String toString() {
+        return "GolpeContundente{" +
+                "nombre='" + nombre + '\'' +
+                ", daño=" + daño +
+                ", usos=" + usos +
+                '}';
+    }
 }

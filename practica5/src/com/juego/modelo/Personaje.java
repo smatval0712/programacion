@@ -28,6 +28,7 @@ public class Personaje {
         raza.rellenarEstadisticas(this.estadisticas);
         //llamamos a la funcion de bonificadorEstadisticas de la clase para que se apliquen las bonificaciones
         clase.bonificadorEstadisticas(this.estadisticas);
+        clase.agregarHabilidad(this);
     }
 
     //get
@@ -70,5 +71,20 @@ public class Personaje {
 
     public void setListaHabilidades(ArrayList<Habilidades> listaHabilidades) {
         this.listaHabilidades = listaHabilidades;
+    }
+
+
+
+    //Funcion mostrar datos del personaje para ver como van los personajes en el combate
+    public String mostrarDatos(){
+
+        System.out.println(getNombre());
+        System.out.println("Vida restante" +getEstadisticas().getVida());
+        for (Habilidades habilidades:getListaHabilidades()){
+            System.out.print(habilidades.getNombre()+", ");
+            System.out.print("Daño: " +habilidades.getDaño()+", ");
+            System.out.print("Usos restantes; " +habilidades.getUsos());
+
+        }
     }
 }

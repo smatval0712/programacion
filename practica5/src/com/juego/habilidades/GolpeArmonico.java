@@ -41,5 +41,14 @@ public class GolpeArmonico implements Habilidades{
     public void usarHabilidad() {
         this.usos--;
     }
+
+    @Override
+    public String toString() {
+        return "GolpeArmonico{" +
+                "nombre='" + nombre + '\'' +
+                ", daño=" + daño +
+                ", usos=" + usos +
+                '}';
+    }
 }
 
