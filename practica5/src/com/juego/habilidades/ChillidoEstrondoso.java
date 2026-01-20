@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class ChillidoEstrondoso implements Habilidades {
     private String nombre;
-    private int daño;
+    private int danio;
     private int usos;
 
     //constructor
     public ChillidoEstrondoso() {
         this.nombre = "Chillido Estrondoso";
-        this.daño = 90;
+        this.danio = 90;
         this.usos = 1;
     }
 
@@ -21,12 +21,12 @@ public class ChillidoEstrondoso implements Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getdanio() {
+        return danio;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setdanio(int danio) {
+        this.danio = danio;
     }
 
     public int getUsos() {
@@ -46,7 +46,7 @@ public class ChillidoEstrondoso implements Habilidades {
     public String toString() {
         return "ChillidoEstrondoso{" +
                 "nombre='" + nombre + '\'' +
-                ", daño=" + daño +
+                ", daño=" + danio +
                 ", usos=" + usos +
                 '}';
     }

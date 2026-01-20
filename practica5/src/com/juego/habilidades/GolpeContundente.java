@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class GolpeContundente implements Habilidades {
     private String nombre;
-    private int daño;
+    private int danio;
     private int usos;
 
     //constructor
     public GolpeContundente() {
         this.nombre = "Golpe Contundente";
-        this.daño = 50;
+        this.danio = 50;
         this.usos = 5;
     }
 
@@ -21,12 +21,12 @@ public class GolpeContundente implements Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getdanio() {
+        return danio;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setdanio(int danio) {
+        this.danio = danio;
     }
 
     public int getUsos() {
@@ -46,7 +46,7 @@ public class GolpeContundente implements Habilidades {
     public String toString() {
         return "GolpeContundente{" +
                 "nombre='" + nombre + '\'' +
-                ", daño=" + daño +
+                ", daño=" + danio +
                 ", usos=" + usos +
                 '}';
     }

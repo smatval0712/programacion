@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class Bastonazo implements Habilidades {
     private String nombre;
-    private int daño;
+    private int danio;
     private int usos;
 
     //constructor
     public Bastonazo() {
         this.nombre = "Bastonazo";
-        this.daño = 38;
+        this.danio = 38;
         this.usos = 5;
     }
 
@@ -21,12 +21,12 @@ public class Bastonazo implements Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getdanio() {
+        return danio;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setdanio(int danio) {
+        this.danio = danio;
     }
 
     public int getUsos() {
@@ -46,7 +46,7 @@ public class Bastonazo implements Habilidades {
     public String toString() {
         return "Bastonazo{" +
                 "nombre='" + nombre + '\'' +
-                ", daño=" + daño +
+                ", daño=" + danio +
                 ", usos=" + usos +
                 '}';
     }

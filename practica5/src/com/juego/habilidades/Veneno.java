@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class Veneno implements Habilidades {
     private String nombre;
-    private int daño;
+    private int danio;
     private int usos;
 
     //constructor
     public Veneno() {
         this.nombre = "Veneno";
-        this.daño = 110;
+        this.danio = 110;
         this.usos = 1;
     }
 
@@ -21,12 +21,12 @@ public class Veneno implements Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getdanio() {
+        return danio;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setdanio(int danio) {
+        this.danio = danio;
     }
 
     public int getUsos() {
@@ -46,7 +46,7 @@ public class Veneno implements Habilidades {
     public String toString() {
         return "Veneno{" +
                 "nombre='" + nombre + '\'' +
-                ", daño=" + daño +
+                ", daño=" + danio +
                 ", usos=" + usos +
                 '}';
     }

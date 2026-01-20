@@ -76,15 +76,21 @@ public class Personaje {
 
 
     //Funcion mostrar datos del personaje para ver como van los personajes en el combate
-    public String mostrarDatos(){
-
+    public void mostrarDatos(){
         System.out.println(getNombre());
-        System.out.println("Vida restante" +getEstadisticas().getVida());
+        System.out.println("Vida restante " +getEstadisticas().getVida());
+        int contador=1;
         for (Habilidades habilidades:getListaHabilidades()){
-            System.out.print(habilidades.getNombre()+", ");
-            System.out.print("Daño: " +habilidades.getDaño()+", ");
-            System.out.print("Usos restantes; " +habilidades.getUsos());
-
+            System.out.print(contador +".- " +habilidades.getNombre()+" --> ");
+            if (habilidades.getNombre().contains("Poción")){
+                System.out.print("cura: " +habilidades.getdanio()+", ");
+            }
+            else{
+                System.out.print("daño: " +habilidades.getdanio()+", ");
+            }
+            System.out.print("Usos restantes: " +habilidades.getUsos());
+            System.out.println();
+            contador++;
         }
     }
 }

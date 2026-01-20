@@ -2,13 +2,13 @@ package com.juego.habilidades;
 
 public class Flechazo implements Habilidades {
     private String nombre;
-    private int daño;
+    private int danio;
     private int usos;
 
     //constructor
     public Flechazo() {
         this.nombre = "Flechazo";
-        this.daño = 100;
+        this.danio = 100;
         this.usos = 1;
     }
 
@@ -21,12 +21,12 @@ public class Flechazo implements Habilidades {
         this.nombre = nombre;
     }
 
-    public int getDaño() {
-        return daño;
+    public int getdanio() {
+        return danio;
     }
 
-    public void setDaño(int daño) {
-        this.daño = daño;
+    public void setdanio(int danio) {
+        this.danio = danio;
     }
 
     public int getUsos() {
@@ -46,7 +46,7 @@ public class Flechazo implements Habilidades {
     public String toString() {
         return "Flechazo{" +
                 "nombre='" + nombre + '\'' +
-                ", daño=" + daño +
+                ", daño=" + danio +
                 ", usos=" + usos +
                 '}';
     }
