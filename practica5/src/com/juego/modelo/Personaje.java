@@ -93,4 +93,9 @@ public class Personaje {
             contador++;
         }
     }
+
+    //funcion para comprobar si el personaje esta muerto
+    public boolean estaMuerto(){
+        return getEstadisticas().getVida()<=0;
+    }
 }
