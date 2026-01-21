@@ -78,7 +78,6 @@ public class Personaje {
     //Funcion mostrar datos del personaje para ver como van los personajes en el combate
     public void mostrarDatos(){
         System.out.println(getNombre());
-        System.out.println("Vida restante " +getEstadisticas().getVida());
         int contador=1;
         for (Habilidades habilidades:getListaHabilidades()){
             System.out.print(contador +".- " +habilidades.getNombre()+" --> ");
@@ -97,5 +96,10 @@ public class Personaje {
     //funcion para comprobar si el personaje esta muerto
     public boolean estaMuerto(){
         return getEstadisticas().getVida()<=0;
+    }
+
+    //funcion que muestra la vida
+    public void mostrarVidas(int numeroPersonaje){
+        System.out.println("Vida del jugador " +numeroPersonaje +": "+getEstadisticas().getVida());
     }
 }

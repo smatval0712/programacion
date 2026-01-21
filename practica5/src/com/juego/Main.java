@@ -19,10 +19,8 @@ public class Main {
        Personaje Personaje1 =new Personaje("Checo",new Humano(),new Guerrero(),new Estadisticas());
        Personaje Personaje2 =new Personaje("Maria",new Elfo(),new Mago(),new Estadisticas());
        Combate combate =new Combate();
-       System.out.println("Vida p1: " +Personaje1.getEstadisticas().getVida());
-       System.out.println("Vida p2: " +Personaje2.getEstadisticas().getVida());
 
-       combate.iniciar(Personaje1,Personaje2);
+       combate.iniciarCombate(Personaje1,Personaje2);
     }
 
 }

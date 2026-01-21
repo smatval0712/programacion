@@ -1,7 +1,5 @@
 package com.juego.modelo;
-
 import com.juego.habilidades.Habilidades;
-
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -46,12 +44,15 @@ public class Combate {
 
 
     //funcion que inicia el combate
-    public void iniciar(Personaje p1, Personaje p2){
+    public void iniciarCombate(Personaje p1, Personaje p2){
         //contador que indica el turno en el que estamos
         int contador=1;
         //bucle que se repite mientras las vidas sean mayor que 0
         while(p1.getEstadisticas().getVida()>0&&p2.getEstadisticas().getVida()>0){
             System.out.println("Turno " +contador);
+            //mostramos las vidas de los personajes
+            p1.mostrarVidas(1);
+            p2.mostrarVidas(2);
             //mostramos los datos del personaje 1
             p1.mostrarDatos();
             //elegimos el movimiento y lo guardamos en la variable eleccion de tipo int
@@ -67,7 +68,7 @@ public class Combate {
                 //establecemos que movimientoValido tendra el valor del return de la funcion usarMovimiento
                 movimientoValido=usarMovimiento(p1,p2,eleccion);
                 //ejecutamos el bucle mientras el valor de la variable movimientoValido sea false gracias a la negacion con !
-                } while(!movimientoValido);
+            } while(!movimientoValido);
             //empieza el personaje 2 mostrando los datos y se repite la misma ejecucion que con el personaje 1
             p2.mostrarDatos();
             do {
@@ -78,6 +79,7 @@ public class Combate {
             }while(!movimientoValido);
             contador++;
         }
+        //Comprobacion de quien ha ganado
         if (p1.estaMuerto()){
             System.out.println("El jugador 2 ha ganado");
         }
