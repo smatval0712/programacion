@@ -6,10 +6,16 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Monje implements Clase {
-
+    private String nombre;
     public Monje(){
-
+        this.nombre="Monje";
     }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
     //funcion añadiendo bonificaciones

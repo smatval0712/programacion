@@ -9,6 +9,7 @@ public interface Clase {
     //funcion base para añadir bonificaciones segun la clase
     void bonificadorEstadisticas (Estadisticas estadisticas);
     void agregarHabilidad (Personaje personaje);
+    public String getNombre();
 }
 
 

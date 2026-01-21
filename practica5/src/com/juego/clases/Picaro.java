@@ -6,9 +6,16 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Picaro implements Clase {
-
+    private String nombre;
     public Picaro(){
+        this.nombre="Picaro";
     }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
     //funcion añadiendo bonificaciones

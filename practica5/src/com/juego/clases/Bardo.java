@@ -6,12 +6,16 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Bardo implements Clase {
-
+    private String nombre;
     //constructor
     public Bardo(){
-
+        this.nombre="Bardo";
     }
 
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
 
     //añadimos el override para sobreescribir sobre la interfaz
     @Override

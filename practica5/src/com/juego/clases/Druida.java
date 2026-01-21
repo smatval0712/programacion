@@ -9,8 +9,15 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Druida implements Clase {
-
+private String nombre;
     public Druida(){
+        this.nombre="Druida";
+
+    }
+
+    @Override
+    public String getNombre() {
+        return nombre;
     }
 
     //añadimos el override para sobreescribir sobre la interfaz

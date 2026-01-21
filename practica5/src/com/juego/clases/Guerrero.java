@@ -6,9 +6,17 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Guerrero implements Clase{
-
+    private String nombre;
     public Guerrero(){
+        this.nombre="Guerrero";
     }
+
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
     //funcion añadiendo bonificaciones

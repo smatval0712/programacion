@@ -102,4 +102,15 @@ public class Personaje {
     public void mostrarVidas(int numeroPersonaje){
         System.out.println("Vida del jugador " +numeroPersonaje +": "+getEstadisticas().getVida());
     }
+
+    public void aniadirPersonajeLista(ArrayList<Personaje> listaPersonajes){
+        listaPersonajes.add(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: '" + nombre + '\'' +
+                ", Raza: " + raza.getNombre() +
+                ", Clase: " + clase.getNombre();
+    }
 }

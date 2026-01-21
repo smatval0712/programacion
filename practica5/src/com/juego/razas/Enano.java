@@ -3,9 +3,14 @@ import com.juego.modelo.Estadisticas;
 
 //implementamos la clase raza en cada raza que creamos para que siga
 public class Enano implements Raza{
-
+    private String nombre;
     public Enano (){
+        this.nombre="Enano";
+    }
 
+    @Override
+    public String getNombre() {
+        return nombre;
     }
 
     //ponemos el override para indicar que vamos a poner el contenido real de la plantilla que teniamos en la interfaz raza

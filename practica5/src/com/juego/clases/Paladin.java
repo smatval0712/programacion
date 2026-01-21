@@ -6,9 +6,16 @@ import com.juego.modelo.Personaje;
 import java.util.ArrayList;
 
 public class Paladin implements Clase {
-
+    private String nombre;
     public Paladin(){
+        this.nombre="Paladin";
     }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
     //añadimos el override para sobreescribir sobre la interfaz
     @Override
     //funcion añadiendo bonificaciones

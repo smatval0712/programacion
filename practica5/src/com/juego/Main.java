@@ -8,6 +8,7 @@ import com.juego.habilidades.Habilidades;
 import com.juego.modelo.Combate;
 import com.juego.modelo.Estadisticas;
 import com.juego.modelo.Personaje;
+import com.juego.modelo.Vista;
 import com.juego.razas.Elfo;
 import com.juego.razas.Humano;
 import com.juego.razas.Raza;
@@ -16,11 +17,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-       Personaje Personaje1 =new Personaje("Checo",new Humano(),new Guerrero(),new Estadisticas());
-       Personaje Personaje2 =new Personaje("Maria",new Elfo(),new Mago(),new Estadisticas());
-       Combate combate =new Combate();
-
-       combate.iniciarCombate(Personaje1,Personaje2);
+        Vista vista=new Vista();
+        vista.inicio();
     }
 
 }
