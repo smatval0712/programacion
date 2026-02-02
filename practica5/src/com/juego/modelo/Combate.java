@@ -1,57 +1,75 @@
-package com.juego.modelo;
 import com.juego.habilidades.Habilidades;
+import com.juego.modelo.Personaje;
+
 import java.util.Scanner;
 
 public class Combate {
 
-    public Combate() {
+    public Combate() {}
 
-    }
+    // Función para que un personaje use un movimiento
+    public boolean usarMovimiento(Personaje atacante, Personaje defensor, int eleccion) {
 
-    //funcion para que un personaje utilice un movimiento
-    public boolean usarMovimiento(Personaje p1, Personaje p2, int eleccion) {
-
-        if (eleccion < 1 || eleccion > 3) {
+        if (eleccion < 1 || eleccion > atacante.getListaHabilidades().size()) {
             System.out.println("Movimiento no válido. Elige otra opción.");
             return false;
         }
 
-        Habilidades habilidad1 = p1.getListaHabilidades().get(eleccion - 1);
+        Habilidades habilidad = atacante.getListaHabilidades().get(eleccion - 1);
 
-        if (habilidad1.getUsos() <= 0) {
+        if (habilidad.getUsos() <= 0) {
             System.out.println("No te quedan usos para ese movimiento. Elige otro.");
             return false;
         }
 
-        System.out.println("\nHas utilizado: " + habilidad1.getNombre());
+        System.out.println("\nHas utilizado: " + habilidad.getNombre());
 
-        if (habilidad1.toString().contains("daño")) {
-            System.out.println("El enemigo recibe " + habilidad1.getdanio() + " de daño");
-            p2.getEstadisticas().setVida(
-                    p2.getEstadisticas().getVida() - habilidad1.getdanio()
+        // ACTIVAR FURIA
+        if (habilidad.getNombre().equals("Furia")) {
+            atacante.activarFuria();
+            System.out.println("¡ENTRAS EN FURIA DURANTE 2 TURNOS!");
+            habilidad.usarHabilidad();
+            return true;
+        }
+
+        // ATAQUE
+        if (habilidad.toString().contains("daño")) {
+
+            int daño = habilidad.getdanio();
+
+            if (atacante.isEnFuria()) {
+                daño *= 2;
+                System.out.println("¡FURIA ACTIVA! Daño x2");
+            }
+
+            System.out.println("El enemigo recibe " + daño + " de daño");
+            defensor.getEstadisticas().setVida(
+                    defensor.getEstadisticas().getVida() - daño
             );
-        } else {
-            System.out.println("Recuperas " + habilidad1.getdanio() + " de vida");
-            p1.getEstadisticas().setVida(
-                    p1.getEstadisticas().getVida() + habilidad1.getdanio()
+        }
+        // CURACIÓN
+        else {
+            System.out.println("Recuperas " + habilidad.getdanio() + " de vida");
+            atacante.getEstadisticas().setVida(
+                    atacante.getEstadisticas().getVida() + habilidad.getdanio()
             );
         }
 
-        habilidad1.usarHabilidad();
+        habilidad.usarHabilidad();
         return true;
     }
 
-    //funcion que inicia el combate
+    // Función que inicia el combate
     public void iniciarCombate(Personaje p1, Personaje p2) {
 
-        int contador = 1;
         Scanner sc = new Scanner(System.in);
+        int turno = 1;
 
         while (p1.getEstadisticas().getVida() > 0 &&
                 p2.getEstadisticas().getVida() > 0) {
 
             System.out.println("\n==============================");
-            System.out.println("           TURNO " + contador);
+            System.out.println("           TURNO " + turno);
             System.out.println("==============================");
 
             System.out.println("\n  VIDAS ACTUALES");
@@ -59,30 +77,39 @@ public class Combate {
             p1.mostrarVidas(1);
             p2.mostrarVidas(2);
 
+            // TURNO JUGADOR 1
             System.out.println("\nTURNO DEL JUGADOR 1");
             System.out.println("------------------------------");
             p1.mostrarDatos();
 
             boolean movimientoValido;
+            int eleccion1;
+
             do {
                 System.out.print("Elige tu próximo movimiento: ");
-                int eleccion = sc.nextInt();
-                movimientoValido = usarMovimiento(p1, p2, eleccion);
+                eleccion1 = sc.nextInt();
+                movimientoValido = usarMovimiento(p1, p2, eleccion1);
             } while (!movimientoValido);
 
+            p1.reducirFuria();
             if (p2.estaMuerto()) break;
 
+            // TURNO JUGADOR 2
             System.out.println("\nTURNO DEL JUGADOR 2");
             System.out.println("------------------------------");
             p2.mostrarDatos();
 
+            int eleccion2;
             do {
                 System.out.print("Elige tu próximo movimiento: ");
-                int eleccion = sc.nextInt();
-                movimientoValido = usarMovimiento(p2, p1, eleccion);
+                eleccion2 = sc.nextInt();
+                movimientoValido = usarMovimiento(p2, p1, eleccion2);
             } while (!movimientoValido);
 
-            contador++;
+            p2.reducirFuria();
+            if (p1.estaMuerto()) break;
+
+            turno++;
         }
 
         System.out.println("\n==============================");
@@ -96,4 +123,5 @@ public class Combate {
         }
     }
 }
+
 
