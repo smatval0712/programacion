@@ -11,6 +11,7 @@ public class Combate {
     //funcion para que un personaje utilice un movimiento
     public boolean usarMovimiento(Personaje p1, Personaje p2, int eleccion) {
 
+
         if (eleccion < 1 || eleccion > 3) {
             System.out.println("Movimiento no válido. Elige otra opción.");
             return false;
