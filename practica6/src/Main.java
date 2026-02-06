@@ -1,6 +1,6 @@
 public class Main {
     static void main(String[] args) {
-        Bloque1 bloq = new Bloque1();
-        bloq.mostrarTercerEvento();
+        Bloque2 bloq = new Bloque2();
+        bloq.muestraMiembros("Magos");
     }
 }
