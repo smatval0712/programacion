@@ -1,19 +1,26 @@
 import java.util.*;
 
 public class Bloque1 {
-
+    //Ejercicio1//
     private ArrayList<String> registroCombate;
+    //Ejercicio2//
     private Set<String> nombreVillanos;
+    //Ejercicio3//
     private Map<String,Integer> aventureros;
+    //Ejercicio5//
     private Map<String,Integer> hechizos;
 
     public Bloque1() {
+        //Ejercicio1//
         this.registroCombate=new ArrayList<>();
         rellenaArray();
+        //Ejercicio2//
         this.nombreVillanos=new HashSet<>();
         rellenaHashSet();
+        //Ejercicio3//
         this.aventureros= new HashMap<>();
         rellenaOro();
+        //Ejercicio5//
         this.hechizos=new HashMap<>();
         rellenaHechizos();
 
@@ -60,8 +67,8 @@ public class Bloque1 {
     }
 
     //Función para mostrar el oro de un aventurero con su nombre
-    public void mostrarAventurero(){
-        this.aventureros.get("Josemi");
+    public void mostrarAventurero(String aventurero){
+        System.out.println(this.aventureros.get(aventurero));
     }
     //-----------------------------------------------
     //Ejercicio 4 --> Limpieza del Calabozo
