@@ -9,6 +9,10 @@ public class Bloque2 {
     private Set<String> objetosArania;
     private Set<String> objetosTrasgo;
     private Map<String, Set<String>> loot;
+    //ejercicio9//
+    private Map<String,Integer> estadisticasConan;
+    private Map<String,Integer> estadisticasZorin;
+    private Map<String, Map<String, Integer>> jugadores;
 
     public Bloque2(){
         //ejercicio7//
@@ -24,6 +28,13 @@ public class Bloque2 {
         rellenaObjetosTrasgo();
         this.loot=new HashMap<>();
         rellenaLoot();
+        //ejercicio9//
+        this.estadisticasZorin=new HashMap<>();
+        rellenaZorin();
+        this.estadisticasConan=new HashMap<>();
+        rellenaConan();
+        this.jugadores=new HashMap<>();
+        rellenaJugadores();
 
 
     }
@@ -33,7 +44,7 @@ public class Bloque2 {
     //Función que rellena los ArrayList guerreros y magos
     public void rellenaArraysGremios(){
         this.guerreros.add("Tarok");
-        this.guerreros.add("Bjorn");
+        this.guerreros.add("Judas");
         this.guerreros.add("Ragnar");
         this.magos.add("Arkanis de las Runas");
         this.magos.add("Nytheris Robaalmas");
@@ -94,4 +105,50 @@ public class Bloque2 {
         }
     }
 
+    //-----------------------------------------------
+    //Ejercicio 9 --> Rastreador de Estadísticas Complejas
+    //-----------------------------------------------
+    //Funcion para rellenar HasMap de estadisticasZorin
+    public void rellenaZorin(){
+        this.estadisticasZorin.put("Fuerza",18);
+        this.estadisticasZorin.put("Destreza",12);
+        this.estadisticasZorin.put("Inteligencia",20);
+        this.estadisticasZorin.put("Vida",100);
+    }
+    //Funcion para rellenar HasMap de estadisticasConan
+    public void rellenaConan(){
+        this.estadisticasConan.put("Fuerza",16);
+        this.estadisticasConan.put("Destreza",15);
+        this.estadisticasConan.put("Inteligencia",18);
+        this.estadisticasConan.put("Vida",120);
+    }
+    //Funcion para rellenar HasMap de jugadores
+    public void rellenaJugadores(){
+        this.jugadores.put("Conan",estadisticasConan);
+        this.jugadores.put("Zorin",estadisticasZorin);
+    }
+    //Funcion para sumarle +2 a la fuerza de Conan
+    public void sumaVidaConan(){
+        Map<String, Integer> nuevasEstadisticas = jugadores.get("Conan");
+        int fuerzaActual= nuevasEstadisticas.get("Fuerza");
+        nuevasEstadisticas.put("Fuerza", fuerzaActual+2);
+        this.jugadores.put("Conan", nuevasEstadisticas);
+        System.out.println("La nueva fuerza de Conan es: "+ nuevasEstadisticas.get("Fuerza"));
+        System.out.println(this.jugadores.get("Conan"));
+    }
+    //-----------------------------------------------
+    //Ejercicio 10 --> El buscador de traidores
+    //-----------------------------------------------
+    public void buscaJudas(){
+        for (Map.Entry<String,ArrayList<String>> traidor:gremios.entrySet()){
+            //este if devuelve un boolean si lo encuentra y lo elimina
+            if (traidor.getValue().remove("Judas")){
+                System.out.println("Traidor encontrado en el gremio: "+traidor.getKey());
+                return;
+            }
+        }
+        System.out.println("Judas no está en ningún gremio");
+    }
+
 }
+
