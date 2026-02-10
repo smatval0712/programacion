@@ -87,6 +87,11 @@ public class Bloque2 {
         }
     }
     //HACER PRUEBA PARA EL 8 CUANDO RELLENE EL DOCUMENTO
-
+    public void pruebaNoRepeticion(){
+        this.objetosTrasgo.add("Espada Oxidada");
+        for (String objeto:this.objetosTrasgo){
+            System.out.println(objeto);
+        }
+    }
 
 }
