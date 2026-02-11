@@ -29,7 +29,7 @@ public class Guerrero implements Clase{
     public void agregarHabilidad(Personaje personaje) {
         ArrayList<Habilidades> listaHabilidades = personaje.getListaHabilidades();
         listaHabilidades.add(new Espadazo());
-        listaHabilidades.add(new Flechazo());
         listaHabilidades.add(new CuracionMayor());
+        listaHabilidades.add(new Furia());
     }
 }

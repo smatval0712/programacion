@@ -107,10 +107,18 @@ public class Personaje {
         listaPersonajes.add(this);
     }
 
+    public void utilizarFuria(){
+        getEstadisticas().setFuerza(getEstadisticas().getFuerza()*2);
+    }
+
     @Override
     public String toString() {
         return "Nombre: '" + nombre + '\'' +
                 ", Raza: " + raza.getNombre() +
                 ", Clase: " + clase.getNombre();
+    }
+
+    public void activarFuria() {
+
     }
 }

@@ -28,7 +28,7 @@ public class Mago implements Clase {
     public void agregarHabilidad(Personaje personaje) {
         ArrayList<Habilidades> listaHabilidades = personaje.getListaHabilidades();
         listaHabilidades.add(new Bastonazo());
-        listaHabilidades.add(new ProyectilMagico());
         listaHabilidades.add(new CuracionMenor());
+        listaHabilidades.add(new HabilidadExplosiva());
     }
 }
