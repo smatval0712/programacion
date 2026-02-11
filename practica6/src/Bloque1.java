@@ -106,10 +106,11 @@ public class Bloque1 {
     //-----------------------------------------------
     //Funcion que comprueba si Sauron esta en mi hashset de villanos y lo elimina
     public void derrotaSauron(){
-        for (String villano : this.nombreVillanos){
-            if (nombreVillanos.contains(villano)){
-                nombreVillanos.remove(villano);
-            }
+        if(nombreVillanos.remove("Sauron")){
+            System.out.println("Sauron ha sido eliminado");
+        }
+        else {
+            System.out.println("Sauron no estaba");
         }
     }
 
