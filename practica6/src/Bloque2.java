@@ -149,6 +149,5 @@ public class Bloque2 {
         }
         System.out.println("Judas no está en ningún gremio");
     }
-
 }
 
