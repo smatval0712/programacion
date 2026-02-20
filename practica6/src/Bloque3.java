@@ -231,7 +231,7 @@ public class Bloque3 {
     }
 
     //----------------------------------------------------------
-    //Ejercicio 15 --> Simulador de economia de subastas
+    //Ejercicio 15 --> Simulador de economia de subastas - LO HE HECHO CON EL CHATGPT
     //----------------------------------------------------------
     //Funcion que rellena los datos
     public void rellenarDatos() {
