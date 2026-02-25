@@ -1,0 +1,19 @@
+[
+  { "id": "W01", "nombre": "Hacha Doble", "tipo": "ARMA", "valor": 100 },
+  { "id": "W02", "nombre": "Espada Larga", "tipo": "ARMA", "valor": 150 },
+  { "id": "W03", "nombre": "Arco Compuesto", "tipo": "ARMA", "valor": 120 },
+  { "id": "W04", "nombre": "Daga Sombria", "tipo": "ARMA", "valor": 80 },
+
+  { "id": "A01", "nombre": "Armadura de Hierro", "tipo": "ARMADURA", "valor": 200 },
+  { "id": "A02", "nombre": "Escudo Pesado", "tipo": "ARMADURA", "valor": 140 },
+  { "id": "A03", "nombre": "Casco de Acero", "tipo": "ARMADURA", "valor": 90 },
+
+  { "id": "P01", "nombre": "Pocion de Vida", "tipo": "CONSUMIBLE", "valor": 25 },
+  { "id": "P02", "nombre": "Pocion de Mana", "tipo": "CONSUMIBLE", "valor": 30 },
+  { "id": "P03", "nombre": "Elixir de Fuerza", "tipo": "CONSUMIBLE", "valor": 50 },
+  { "id": "P04", "nombre": "Antidoto", "tipo": "CONSUMIBLE", "valor": 20 },
+
+  { "id": "M01", "nombre": "Amuleto Magico", "tipo": "ACCESORIO", "valor": 300 },
+  { "id": "M02", "nombre": "Anillo de Velocidad", "tipo": "ACCESORIO", "valor": 180 },
+  { "id": "M03", "nombre": "Capa de Invisibilidad", "tipo": "ACCESORIO", "valor": 500 }
+]

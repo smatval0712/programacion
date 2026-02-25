@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Aragorn",
+    "raza": "Humano",
+    "nivel": 20,
+    "equipoIds": ["W02", "A01", "M01"]
+  },
+  {
+    "nombre": "Legolas",
+    "raza": "Elfo",
+    "nivel": 18,
+    "equipoIds": ["W03", "A03", "M02"]
+  },
+  {
+    "nombre": "Gimli",
+    "raza": "Enano",
+    "nivel": 17,
+    "equipoIds": ["W01", "A01", "A02"]
+  },
+  {
+    "nombre": "Merlin",
+    "raza": "Humano",
+    "nivel": 25,
+    "equipoIds": ["W04", "M03"]
+  },
+  {
+    "nombre": "Thalion",
+    "raza": "Elfo",
+    "nivel": 15,
+    "equipoIds": ["W02", "A02"]
+  },
+  {
+    "nombre": "Borin",
+    "raza": "Enano",
+    "nivel": 12,
+    "equipoIds": ["W01", "A03"]
+  }
+]

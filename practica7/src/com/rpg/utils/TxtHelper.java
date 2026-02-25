@@ -12,7 +12,7 @@ public class TxtHelper {
     public TxtHelper() {
     }
 
-    public void leerTxt(){
+    public List<Ciudad> leerTxt(){
         try{
             List<String> ciudades = Files.readAllLines(Paths.get("practica7\\ficheros\\ciudades.txt"));
             List<Ciudad> listaCiudades = new ArrayList<>();
@@ -30,8 +30,10 @@ public class TxtHelper {
             for (Ciudad c : listaCiudades){
                 System.out.println(c.getNombre());
             }
+            return listaCiudades;
         } catch (IOException e){
             System.out.println("No se ha podido abrir el fichero");
+            return new ArrayList<>();
         }
     }
 
