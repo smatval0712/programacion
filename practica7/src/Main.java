@@ -15,8 +15,8 @@ public class Main {
     static void main(String[] args){
         JsonHelper j= new JsonHelper();
 
-        for(Personaje p : j.leerJSON("practica7\\ficheros\\personajes.json", Personaje.class)){
-            System.out.println(p.getNombre());
+        for(Item i : j.leerJSON("practica7\\ficheros\\Items.json", Item.class)){
+            System.out.println(i.getNombre());
         }
     }
 }
