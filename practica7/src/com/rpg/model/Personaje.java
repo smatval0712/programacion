@@ -6,11 +6,13 @@ import java.util.List;
 public class Personaje {
     private String nombre;
     private String raza;
-    private List<Item> equipo;
-    public Personaje(String nombre, String raza){
+    private Integer nivel;
+    private List<String> equipo;
+    public Personaje(String nombre, String raza,Integer nivel, List<String> equipo){
         this.nombre=nombre;
         this.raza=raza;
-        this.equipo=new ArrayList<>();
+        this.nivel=nivel;
+        this.equipo=equipo;
     }
 
     public String getNombre() {
@@ -29,11 +31,11 @@ public class Personaje {
         this.raza = raza;
     }
 
-    public List<Item> getEquipo() {
+    public List<String> getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(List<Item> equipo) {
+    public void setEquipo(List<String> equipo) {
         this.equipo = equipo;
     }
 }
