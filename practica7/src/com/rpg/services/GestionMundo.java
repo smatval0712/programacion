@@ -48,5 +48,6 @@ public class GestionMundo {
         this.personajes.add(personaje);
     }
 
+    public void guardarCambios
 
 }
