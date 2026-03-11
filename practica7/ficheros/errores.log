@@ -1,0 +1,5 @@
+[2026-03-11T21:13:29.085397900] ERROR: al leer el fichero, adfo (El sistema no puede encontrar el archivo especificado)
+[2026-03-11T21:14:36.387769300] ERROR: al leer el fichero, practica7\ficherosss\personajes.json (El sistema no puede encontrar la ruta especificada)
+[2026-03-11T22:32:30.961302600] ERROR: al leer el fichero, com.google.gson.stream.MalformedJsonException: Unterminated array at line 14 column 4 path $[1]
+[2026-03-11T22:57:43.957223400] ERROR: El nivel introducido no es válido
+[2026-03-11T23:02:55.849426700] ERROR: El item W0100 no existe

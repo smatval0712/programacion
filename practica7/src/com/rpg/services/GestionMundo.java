@@ -1,10 +1,13 @@
 package com.rpg.services;
 
 import com.rpg.handler.DatoInvalidoException;
+import com.rpg.handler.FormatoInvalidoException;
+import com.rpg.handler.RPGDataException;
 import com.rpg.model.Ciudad;
 import com.rpg.model.Item;
 import com.rpg.model.Personaje;
 import com.rpg.utils.JsonHelper;
+import com.rpg.utils.LoggerCustom;
 import com.rpg.utils.TxtHelper;
 
 import java.util.ArrayList;
@@ -16,19 +19,26 @@ public class GestionMundo {
     private List<Personaje> personajes;
     private List<Item> listaItem;
     private HashMap<String, Item> mapItems;
+    private LoggerCustom loggerCustom;
+    private TxtHelper txt;
+    private JsonHelper jhelper;
 
-    public GestionMundo(){
+
+    public GestionMundo() throws FormatoInvalidoException {
         this.personajes = new ArrayList<>();
         this.listaCiudades=new ArrayList<>();
         this.listaItem=new ArrayList<>();
         this.mapItems=new HashMap<>();
+        this.loggerCustom=new LoggerCustom();
+        this.txt=new TxtHelper();
+        this.jhelper=new JsonHelper();
+        cargarTodo();
     }
 
-    public void cargarTodo(){
-        TxtHelper txt = new TxtHelper();
+    //CargarTodo
+    public void cargarTodo() throws FormatoInvalidoException {
         this.listaCiudades= txt.leerTxt();
 
-        JsonHelper jhelper =new JsonHelper();
         this.personajes = jhelper.leerJSON("practica7\\ficheros\\personajes.json", Personaje.class);
 
         this.listaItem=jhelper.leerJSON("practica7\\ficheros\\Items.json", Item.class);
@@ -38,16 +48,29 @@ public class GestionMundo {
         }
     }
 
+    //Crear personaje
     public void crearPersonaje(String nombre, String raza, Integer nivel, List<String> idItems) throws DatoInvalidoException {
         for (String id : idItems) {
+
+            if(nivel<0){
+                loggerCustom.escribirLog("ERROR: El nivel introducido no es válido");
+                throw new DatoInvalidoException("El nivel introducido no es válido");
+            }
+
             if (!this.mapItems.containsKey(id)) {
-                throw new DatoInvalidoException("El item no existe");
+                loggerCustom.escribirLog("ERROR: El item " +id +" no existe");
+                throw new DatoInvalidoException("El item " +id +" no existe");
             }
         }
         Personaje personaje=new Personaje(nombre,raza,nivel,idItems);
         this.personajes.add(personaje);
     }
 
-    public void guardarCambios
+    //Guardar cammbios llama a escribirJson
+    public void guardarCambios() throws RPGDataException {
+        jhelper.escribirJson("practica7\\ficheros\\personajes.json",this.personajes);
+    }
+
+
 
 }

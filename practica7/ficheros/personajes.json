@@ -3,36 +3,79 @@
     "nombre": "Aragorn",
     "raza": "Humano",
     "nivel": 20,
-    "equipoIds": ["W02", "A01", "M01"]
+    "equipo": [
+      "W02",
+      "A01",
+      "A02",
+      "P01",
+      "M02"
+    ]
   },
   {
     "nombre": "Legolas",
     "raza": "Elfo",
     "nivel": 18,
-    "equipoIds": ["W03", "A03", "M02"]
+    "equipo": [
+      "W03",
+      "A03",
+      "P02",
+      "P03",
+      "M02"
+    ]
   },
   {
     "nombre": "Gimli",
     "raza": "Enano",
     "nivel": 17,
-    "equipoIds": ["W01", "A01", "A02"]
+    "equipo": [
+      "W01",
+      "A01",
+      "A02",
+      "P01"
+    ]
   },
   {
     "nombre": "Merlin",
     "raza": "Humano",
     "nivel": 25,
-    "equipoIds": ["W04", "M03"]
+    "equipo": [
+      "W04",
+      "P02",
+      "P03",
+      "M01",
+      "M03"
+    ]
   },
   {
     "nombre": "Thalion",
     "raza": "Elfo",
     "nivel": 15,
-    "equipoIds": ["W02", "A02"]
+    "equipo": [
+      "W03",
+      "A03",
+      "P04",
+      "M02"
+    ]
   },
   {
     "nombre": "Borin",
     "raza": "Enano",
     "nivel": 12,
-    "equipoIds": ["W01", "A03"]
+    "equipo": [
+      "W01",
+      "A01",
+      "P01",
+      "P04"
+    ]
+  },
+  {
+    "nombre": "Santiago Abascal",
+    "raza": "Guerrero",
+    "nivel": 100,
+    "equipo": [
+      "W01",
+      "A01",
+      "M01"
+    ]
   }
 ]
