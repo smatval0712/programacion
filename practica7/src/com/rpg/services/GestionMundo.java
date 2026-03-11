@@ -3,6 +3,7 @@ package com.rpg.services;
 import com.rpg.handler.DatoInvalidoException;
 import com.rpg.handler.FormatoInvalidoException;
 import com.rpg.handler.RPGDataException;
+import com.rpg.handler.RecursoNoEncontradoException;
 import com.rpg.model.Ciudad;
 import com.rpg.model.Item;
 import com.rpg.model.Personaje;
@@ -49,7 +50,7 @@ public class GestionMundo {
     }
 
     //Crear personaje
-    public void crearPersonaje(String nombre, String raza, Integer nivel, List<String> idItems) throws DatoInvalidoException {
+    public void crearPersonaje(String nombre, String raza, Integer nivel, List<String> idItems) throws RPGDataException {
         for (String id : idItems) {
 
             if(nivel<0){
@@ -59,11 +60,12 @@ public class GestionMundo {
 
             if (!this.mapItems.containsKey(id)) {
                 loggerCustom.escribirLog("ERROR: El item " +id +" no existe");
-                throw new DatoInvalidoException("El item " +id +" no existe");
+                throw new RecursoNoEncontradoException("El item " +id +" no existe");
             }
         }
         Personaje personaje=new Personaje(nombre,raza,nivel,idItems);
         this.personajes.add(personaje);
+        guardarCambios();
     }
 
     //Guardar cammbios llama a escribirJson
