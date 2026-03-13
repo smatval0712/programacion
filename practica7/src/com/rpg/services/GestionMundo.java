@@ -40,9 +40,9 @@ public class GestionMundo {
     public void cargarTodo() throws FormatoInvalidoException {
         this.listaCiudades= txt.leerTxt();
 
-        this.personajes = jhelper.leerJSON("practica7\\ficheros\\personajes.json", Personaje.class);
+        this.personajes = jhelper.leerJSON("practica7/ficheros/personajes.json", Personaje.class);
 
-        this.listaItem=jhelper.leerJSON("practica7\\ficheros\\Items.json", Item.class);
+        this.listaItem=jhelper.leerJSON("practica7/ficheros/Items.json", Item.class);
 
         for(Item item : listaItem){
             this.mapItems.put(item.getId(), item);
@@ -70,7 +70,7 @@ public class GestionMundo {
 
     //Guardar cammbios llama a escribirJson
     public void guardarCambios() throws RPGDataException {
-        jhelper.escribirJson("practica7\\ficheros\\personajes.json",this.personajes);
+        jhelper.escribirJson("practica7/ficheros/personajes.json",this.personajes);
     }
 
 

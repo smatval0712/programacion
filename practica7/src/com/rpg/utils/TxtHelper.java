@@ -18,7 +18,7 @@ public class TxtHelper {
     //Leer archivos txt
     public List<Ciudad> leerTxt() throws FormatoInvalidoException {
         try{
-            List<String> ciudades = Files.readAllLines(Paths.get("practica7\\ficheros\\ciudades.txt"));
+            List<String> ciudades = Files.readAllLines(Paths.get("practica7/ficheros/ciudades.txt"));
             List<Ciudad> listaCiudades = new ArrayList<>();
             for(String linea:ciudades){
                 String[] s = linea.split(";");
