@@ -9,8 +9,8 @@
   { "id": "A03", "nombre": "Casco de Acero", "tipo": "ARMADURA", "valor": 90 },
 
   { "id": "P01", "nombre": "Pocion de Vida", "tipo": "CONSUMIBLE", "valor": 25 },
-  { "id": "P02", "nombre": "Pocion de Mana", "tipo": "CONSUMIBLE", "valor": 30 },
-  { "id": "P03", "nombre": "Elixir de Fuerza", "tipo": "CONSUMIBLE", "valor": 50 },
+  { "id": "P02", "nombre": "Pocion de Mana", "tipo": "HIELO", "valor": 30 },
+  { "id": "P03", "nombre": "Elixir de Fuerza", "tipo": "HIELO", "valor": 50 },
   { "id": "P04", "nombre": "Antidoto", "tipo": "CONSUMIBLE", "valor": 20 },
 
   { "id": "M01", "nombre": "Amuleto Magico", "tipo": "ACCESORIO", "valor": 300 },

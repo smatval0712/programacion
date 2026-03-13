@@ -8,11 +8,13 @@ public class Personaje {
     private String raza;
     private Integer nivel;
     private List<String> equipo;
-    public Personaje(String nombre, String raza,Integer nivel, List<String> equipo){
+    private String ciudad;
+    public Personaje(String nombre, String raza,Integer nivel, List<String> equipo, String ciudad){
         this.nombre=nombre;
         this.raza=raza;
         this.nivel=nivel;
         this.equipo=equipo;
+        this.ciudad=ciudad;
     }
 
     public String getNombre() {
@@ -27,6 +29,14 @@ public class Personaje {
         return raza;
     }
 
+    public void setNivel(Integer nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
     public void setRaza(String raza) {
         this.raza = raza;
     }
@@ -37,5 +47,13 @@ public class Personaje {
 
     public void setEquipo(List<String> equipo) {
         this.equipo = equipo;
+    }
+
+    public Integer getNivel() {
+        return nivel;
+    }
+
+    public String getCiudad() {
+        return ciudad;
     }
 }

@@ -18,6 +18,5 @@ import java.util.List;
 public class Main {
     static void main(String[] args) throws RPGDataException {
         GestionMundo gestion = new GestionMundo();
-        gestion.crearPersonaje("Santiago Abascal", "Guerrero", 100, new ArrayList<>(List.of("W01", "A01", "M01")));
     }
 }

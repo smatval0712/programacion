@@ -1,8 +1,8 @@
 Minas Tirith;20000;Soleado;3
 Isengard;5000;Nublado;8
 Rivendel;3000;Templado;2
-Rohan;15000;Ventoso;5
+Rohan;15000;Volcanico;5
 Gondor;25000;Mediterraneo;4
 Mordor;100000;Seco;10
 Bree;1200;Lluvioso;6
-Comarca;8000;Suave;1
+Comarca;8000;Desertico;1

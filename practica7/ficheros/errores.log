@@ -3,3 +3,10 @@
 [2026-03-11T22:32:30.961302600] ERROR: al leer el fichero, com.google.gson.stream.MalformedJsonException: Unterminated array at line 14 column 4 path $[1]
 [2026-03-11T22:57:43.957223400] ERROR: El nivel introducido no es válido
 [2026-03-11T23:02:55.849426700] ERROR: El item W0100 no existe
+[2026-03-13T09:50:50.108191194] ERROR: Esta raza no puede estar en una ciudad con este clima
+[2026-03-13T09:51:52.739748291] ERROR: Esta raza no puede estar en una ciudad con este clima
+[2026-03-13T09:52:47.137916142] ERROR: Esta raza no puede estar en una ciudad con este clima
+[2026-03-13T09:56:27.543999606] ERROR: Esta raza no puede estar en una ciudad con este clima
+[2026-03-13T10:56:06.463635962] ERROR: El personaje tiene un item que no puede estar en una ciudad con este clima
+[2026-03-13T10:57:31.024579075] ERROR: El personaje tiene un item que no puede estar en una ciudad con este clima
+[2026-03-13T11:42:32.174317460] ERROR: El personaje tiene un item que no puede estar en una ciudad con este clima

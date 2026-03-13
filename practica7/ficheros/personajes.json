@@ -9,7 +9,8 @@
       "A02",
       "P01",
       "M02"
-    ]
+    ],
+    "ciudad": "Minas Tirith"
   },
   {
     "nombre": "Legolas",
@@ -21,7 +22,9 @@
       "P02",
       "P03",
       "M02"
-    ]
+    ],
+    "ciudad": "Rivendel"
+
   },
   {
     "nombre": "Gimli",
@@ -32,7 +35,8 @@
       "A01",
       "A02",
       "P01"
-    ]
+    ],
+    "ciudad": "Rohan"
   },
   {
     "nombre": "Merlin",
@@ -44,7 +48,8 @@
       "P03",
       "M01",
       "M03"
-    ]
+    ],
+    "ciudad": "Bree"
   },
   {
     "nombre": "Thalion",
@@ -53,9 +58,10 @@
     "equipo": [
       "W03",
       "A03",
-      "P04",
+      "P02",
       "M02"
-    ]
+    ],
+    "ciudad": "Rohan"
   },
   {
     "nombre": "Borin",
@@ -66,16 +72,7 @@
       "A01",
       "P01",
       "P04"
-    ]
-  },
-  {
-    "nombre": "Santiago Abascal",
-    "raza": "Guerrero",
-    "nivel": 100,
-    "equipo": [
-      "W01",
-      "A01",
-      "M01"
-    ]
+    ],
+    "ciudad": "Gondor"
   }
 ]

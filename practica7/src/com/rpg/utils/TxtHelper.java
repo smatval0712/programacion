@@ -31,10 +31,10 @@ public class TxtHelper {
                 listaCiudades.add(c);
             }
             return listaCiudades;
+
         } catch (Exception e){
             loggerCustom.escribirLog("ERROR: al leer el fichero, "+e.getMessage());
             throw new FormatoInvalidoException("ERROR: al leer el fichero, "+e.getMessage());
         }
     }
-
 }
