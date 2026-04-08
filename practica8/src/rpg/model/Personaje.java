@@ -1,5 +1,6 @@
 package rpg.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Personaje {
@@ -14,7 +15,7 @@ public class Personaje {
     private Map<Item,Integer> inventario;
     private Map<Habilidad, Boolean> habilidades;
 
-    public Personaje(Integer id, String nombre, Integer nivel, Integer oro, Integer vida_actual, Raza raza, Clase clase, Ciudad ciudad, Map<Item, Integer> inventario, Map<Habilidad, Boolean> habilidades) {
+    public Personaje(Integer id, String nombre, Integer nivel, Integer oro, Integer vida_actual, Raza raza, Clase clase, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.nivel = nivel;
@@ -23,8 +24,8 @@ public class Personaje {
         this.raza = raza;
         this.clase = clase;
         this.ciudad = ciudad;
-        this.inventario = inventario;
-        this.habilidades = habilidades;
+        this.inventario = new HashMap<>();
+        this.habilidades = new HashMap<>();
     }
 
     public Integer getId() {

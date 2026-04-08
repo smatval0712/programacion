@@ -1,28 +1,31 @@
 package rpg.dao;
 
 import rpg.model.Ciudad;
+import rpg.model.Clase;
 import rpg.model.Raza;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CiudadDAO {
-    private ArrayList<Ciudad> ciudades;
+public class ClaseDAO {
+    private ArrayList<Clase> clases;
     private ConexionDB conexionDB;
 
-    public CiudadDAO(){
-        this.ciudades=new ArrayList<>();
+    public ClaseDAO(){
+        this.clases=new ArrayList<>();
         this.conexionDB=new ConexionDB();
         cargaCiudades();
+
+
     }
 
-    public ArrayList<Ciudad> getCiudades() {
-        return ciudades;
+    public ArrayList<Clase> getClases() {
+        return clases;
     }
 
-    public void setCiudades(ArrayList<Ciudad> ciudades) {
-        this.ciudades = ciudades;
+    public void setClases(ArrayList<Clase> clases) {
+        this.clases = clases;
     }
 
     public ConexionDB getConexionDB() {
@@ -34,15 +37,13 @@ public class CiudadDAO {
     }
 
     public void cargaCiudades(){
-        ResultSet resultset = conexionDB.executeQuery("SELECT * FROM ciudades");
+        ResultSet resultset = conexionDB.executeQuery("SELECT * FROM clases_rpg");
 
         try {
             while (resultset.next()) {
                 Integer id = resultset.getInt("id");
                 String nombre = resultset.getString("nombre");
-                Integer nivel_minimo_acceso = resultset.getInt("nivel_minimo_acceso");
-
-                this.ciudades.add(new Ciudad(id, nombre, nivel_minimo_acceso));
+                this.clases.add(new Clase(id, nombre));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,4 +1,6 @@
+import rpg.dao.CiudadDAO;
 import rpg.dao.RazaDAO;
+import rpg.model.Ciudad;
 import rpg.model.Raza;
 
 import java.sql.*;
