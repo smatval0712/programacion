@@ -49,4 +49,13 @@ public class ClaseDAO {
             e.printStackTrace();
         }
     }
+
+    public Clase buscaClasePorId(Integer id){
+        for (Clase clase : clases){
+            if (clase.getId().equals(id)){
+                return clase;
+            }
+        }
+        return null;
+    }
 }

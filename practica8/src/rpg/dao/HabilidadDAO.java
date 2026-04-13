@@ -3,6 +3,7 @@ package rpg.dao;
 import rpg.model.Ciudad;
 import rpg.model.Habilidad;
 import rpg.model.Item;
+import rpg.model.Personaje;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,22 @@ public class HabilidadDAO {
         this.habilidades=new ArrayList<>();
         this.conexionDB=new ConexionDB();
         cargaHabilidades();
+    }
+
+    public ArrayList<Habilidad> getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(ArrayList<Habilidad> habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public ConexionDB getConexionDB() {
+        return conexionDB;
+    }
+
+    public void setConexionDB(ConexionDB conexionDB) {
+        this.conexionDB = conexionDB;
     }
 
     public void cargaHabilidades(){
@@ -33,6 +50,40 @@ public class HabilidadDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public Habilidad buscaHabilidadPorId(Integer id_habilidad){
+        for (Habilidad habilidad: habilidades){
+            if (habilidad.getId().equals(id_habilidad)){
+                return habilidad;
+            }
+        }
+        return null;
+    }
+
+    public void cargaHabilidadesEnPersonajes(Personaje personaje){
+        try {
+            ResultSet resultset = conexionDB.executeQuery("SELECT * FROM personajes_habilidades WHERE id_personaje = " + personaje.getId());
+
+            while (resultset.next()) {
+                Integer id_habilidad = resultset.getInt("id_habilidad");
+                boolean equipada = resultset.getBoolean("equipada_combate");
+                Habilidad habilidad=buscaHabilidadPorId(id_habilidad);
+                personaje.getHabilidades().put(habilidad,equipada);
+
+            }
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    public void aniadirHabilidadesPersonaje(Personaje personaje){
+        for(Habilidad habilidad : habilidades){
+            if(habilidad.getId_clase().equals(personaje.getClase().getId())){
+                personaje.getHabilidades().put(habilidad,false);
+            }
         }
     }
 }

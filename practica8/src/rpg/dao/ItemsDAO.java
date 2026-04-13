@@ -51,4 +51,12 @@ public class ItemsDAO {
             e.printStackTrace();
         }
     }
+    public Item getItemById(int idPasado){
+        for (Item item : items){
+            if (item.getId() == idPasado){
+                return item;
+            }
+        }
+        return null;
+    }
 }

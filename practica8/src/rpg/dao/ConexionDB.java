@@ -14,7 +14,6 @@ public class ConexionDB {
     public ConexionDB() {
         try {
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexión establecida");
         } catch (SQLException e) {
             System.out.println("Error al conectar con la BD");
             e.printStackTrace();

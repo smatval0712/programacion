@@ -47,4 +47,13 @@ public class RazaDAO {
             e.printStackTrace();
         }
     }
+
+    public Raza buscaRazaPorId(Integer id){
+        for (Raza raza : razas){
+            if (raza.getId().equals(id)){
+                return raza;
+            }
+        }
+        return null;
+    }
 }

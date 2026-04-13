@@ -1,6 +1,7 @@
 package rpg.dao;
 
 import rpg.model.Ciudad;
+import rpg.model.Clase;
 import rpg.model.Raza;
 
 import java.sql.ResultSet;
@@ -47,5 +48,14 @@ public class CiudadDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public Ciudad buscaCiudadPorId(Integer id){
+        for (Ciudad ciudad : ciudades){
+            if (ciudad.getId().equals(id)){
+                return ciudad;
+            }
+        }
+        return null;
     }
 }

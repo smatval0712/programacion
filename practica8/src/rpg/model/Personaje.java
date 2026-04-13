@@ -107,6 +107,9 @@ public class Personaje {
     public void setHabilidades(Map<Habilidad, Boolean> habilidades) {
         this.habilidades = habilidades;
     }
+
 }
+
+
 
 
