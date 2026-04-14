@@ -65,6 +65,14 @@ public class PersonajeDAO {
         this.ciudadDAO = ciudadDAO;
     }
 
+    public HabilidadDAO getHabilidadDAO() {
+        return habilidadDAO;
+    }
+
+    public void setHabilidadDAO(HabilidadDAO habilidadDAO) {
+        this.habilidadDAO = habilidadDAO;
+    }
+
     public void cargaPersonaje(){
         ResultSet resultset = conexionDB.executeQuery("SELECT * FROM personajes");
 
@@ -93,52 +101,31 @@ public class PersonajeDAO {
         }
     }
 
+    //Funcion para insertar el personaje en la bd, devolviendo su id para solucionar el problema del id al crear el personaje
 
-    public Personaje crearPersonaje() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce un nombre para tu personaje: ");
-        String nombre = sc.next();
-
-        System.out.println("Elije una raza introduciendo su id: ");
-        for (Raza raza : razaDAO.getRazas()) {
-            System.out.println(raza.getId() + " -> " + raza.getNombre());
-        }
-        Integer Id_Raza_Elegida = sc.nextInt();
-
-        Raza razaElegida = null;
-        for (Raza raza : razaDAO.getRazas()) {
-            if (raza.getId().equals(Id_Raza_Elegida)) {
-                razaElegida = raza;
-                break;
+    public Integer insertarPesonajeEnBD(String nombre, Integer nivel, Integer oro, Integer vidaMaxima, Raza razaElegida, Clase claseElegida, Ciudad ciudadElegida){
+        ResultSet resultset = conexionDB.executeQuery(
+                "INSERT INTO personajes (nombre, nivel, oro, vida_actual, id_raza, id_clase, id_ciudad_actual) " +
+                        "VALUES ('" + nombre + "', " + nivel + ", " + oro + ", " + vidaMaxima + ", " +
+                        razaElegida.getId() + ", " + claseElegida.getId() + ", " + ciudadElegida.getId() + ") RETURNING id");
+        Integer idGenerado = null;
+        try {
+            if (resultset.next()) {
+                idGenerado = resultset.getInt("id");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        if (razaElegida == null) {
-            System.out.println("Raza no encontrada");
-        }
-
-        System.out.println("Elije una clase introduciendo su id: ");
-        for (Clase clase : claseDAO.getClases()) {
-            System.out.println(clase.getId() + " -> " + clase.getNombre());
-        }
-        Integer Id_Clase_Elegida = sc.nextInt();
-        for (Clase clase : claseDAO.getClases()) {
-            if (clase.getId().equals(Id_Clase_Elegida)) {
-                Clase claseElegida = clase;
-            }
-        }
-
-        Integer vidaMaxima = 100 + razaElegida.getBonificador_vida();
-
-
+        return  idGenerado;
     }
 
 
 
-
-
-
-
-
+    //Funcion para cambiar la ciudad del personaje, en la bd y local
+    public void cambiarCiudadPersonaje(Personaje p, Ciudad c){
+        conexionDB.executeUpdate(
+                "UPDATE personajes SET id_ciudad_actual = " + c.getId() + " WHERE id = " + p.getId());
+        p.setCiudad(c);
+    }
 
 }
