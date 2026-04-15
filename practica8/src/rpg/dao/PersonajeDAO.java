@@ -2,6 +2,7 @@ package rpg.dao;
 
 import rpg.model.*;
 
+import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class PersonajeDAO {
     private ArrayList<Personaje> personajes;
+    private ItemsDAO itemsDAO;
     private ConexionDB conexionDB;
     private RazaDAO razaDAO;
     private ClaseDAO claseDAO;
@@ -22,6 +24,7 @@ public class PersonajeDAO {
         this.razaDAO=new RazaDAO();
         this.ciudadDAO=new CiudadDAO();
         this.habilidadDAO= new HabilidadDAO();
+        this.itemsDAO=new ItemsDAO();
         cargaPersonaje();
     }
 
@@ -73,6 +76,14 @@ public class PersonajeDAO {
         this.habilidadDAO = habilidadDAO;
     }
 
+    public ItemsDAO getItemsDAO() {
+        return itemsDAO;
+    }
+
+    public void setItemsDAO(ItemsDAO itemsDAO) {
+        this.itemsDAO = itemsDAO;
+    }
+
     public void cargaPersonaje(){
         ResultSet resultset = conexionDB.executeQuery("SELECT * FROM personajes");
 
@@ -91,6 +102,7 @@ public class PersonajeDAO {
                 Ciudad ciudad = ciudadDAO.buscaCiudadPorId(id_ciudad_actual);
 
                Personaje p = new Personaje(id,nombre,nivel,oro,vida_actual,raza,clase,ciudad);
+               itemsDAO.cargaItemsEnPersonaje(p);
                habilidadDAO.cargaHabilidadesEnPersonajes(p);
                this.personajes.add(p);
 
@@ -127,5 +139,19 @@ public class PersonajeDAO {
                 "UPDATE personajes SET id_ciudad_actual = " + c.getId() + " WHERE id = " + p.getId());
         p.setCiudad(c);
     }
+    //Funcion para restar oro a un personaje (utilizada en comprasItems)
+    public void restarOroPersonaje(Integer Oro, Personaje p){
+        conexionDB.executeUpdate(
+                "UPDATE personajes SET oro = " +Oro + " WHERE id = " +p.getId());
+    }
+
+    //Funcion para actualizar inventario personajes
+    public void actualizarInventarioPersonaje(Item i, Personaje p){
+        conexionDB.executeUpdate(
+                "INSERT INTO inventarios (id_personaje, id_item, cantidad) VALUES (" +p.getId() +", " +i.getId() +", 1)" +
+                        "ON CONFLICT (id_personaje, id_item) DO UPDATE SET cantidad = inventarios.cantidad + 1 "
+        );
+    }
+
 
 }

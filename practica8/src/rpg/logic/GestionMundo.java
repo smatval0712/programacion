@@ -21,7 +21,17 @@ public class GestionMundo {
 
     public void comprarItems(Personaje p, Item i){
         if(p.getOro()>=i.getPrecio_oro()){
-            p.g
+            if (p.getInventario().containsKey(i)){
+                p.getInventario().put(i,p.getInventario().get(i)+1);
+            }
+            else {
+                p.getInventario().put(i,1);
+            }
+            p.setOro(p.getOro()-i.getPrecio_oro());
+            personajeDAO.restarOroPersonaje(p.getOro(),p);
+            personajeDAO.actualizarInventarioPersonaje(i,p);
+        } else {
+            System.out.println("Fondos insuficientes");
         }
     }
 }

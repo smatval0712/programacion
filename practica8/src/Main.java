@@ -8,8 +8,9 @@ import java.sql.*;
 
 public class Main {
     static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.viajarDeCiudad();
-
+        PersonajeDAO personajeDAO = new PersonajeDAO();
+        Menu menu=new Menu();
+        Personaje personajeElegido=personajeDAO.getPersonajes().getFirst();
+        menu.comprarItems(personajeElegido);
     }
 }

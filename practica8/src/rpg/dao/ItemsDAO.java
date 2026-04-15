@@ -1,6 +1,7 @@
 package rpg.dao;
 
 import rpg.model.Item;
+import rpg.model.Personaje;
 import rpg.model.Raza;
 
 import java.sql.ResultSet;
@@ -58,5 +59,22 @@ public class ItemsDAO {
             }
         }
         return null;
+    }
+
+    // En ItemsDAO
+    public void cargaItemsEnPersonaje(Personaje personaje){
+        try {
+            ResultSet resultset = conexionDB.executeQuery(
+                    "SELECT * FROM inventarios WHERE id_personaje = " + personaje.getId());
+
+            while (resultset.next()) {
+                Integer id_item = resultset.getInt("id_item");
+                Integer cantidad = resultset.getInt("cantidad");
+                Item item = getItemById(id_item);
+                personaje.getInventario().put(item, cantidad);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

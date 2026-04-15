@@ -1,19 +1,22 @@
 package rpg.ui;
 
 import rpg.dao.PersonajeDAO;
+import rpg.logic.GestionMundo;
 import rpg.model.*;
 
 import java.util.Scanner;
 
 public class Menu {
     private PersonajeDAO personajeDAO;
+    private GestionMundo gestionMundo;
 
     public Menu(){
         this.personajeDAO = new PersonajeDAO();
+        this.gestionMundo=new GestionMundo(this.personajeDAO);
     }
 
+    Scanner sc =new Scanner(System.in);
     public void crearPersonaje() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Introduce un nombre para tu personaje: ");
         String nombre = sc.next();
 
@@ -83,27 +86,9 @@ public class Menu {
 
     //Funcion para cambiar la ciudad de un personaje, llama a la funcion que la cambia tambien en la base de datos
     public void viajarDeCiudad(){
-        Scanner sc = new Scanner(System.in);
-        Personaje personajeElegido = null;
+        Personaje personajeElegido = elegirPersonaje();
         Ciudad ciudadElegida = null;
-        //Eleccion de personaje
-        while (personajeElegido==null){
-            System.out.println("Selecciona el personaje al que quieras cambiar de ciudad: ");
-            for (Personaje p: personajeDAO.getPersonajes()){
-                System.out.println(p.getId()+ " -> " +p.getNombre());
-            }
-            Integer IdPersonajeElegido= sc.nextInt();
 
-            for (Personaje p: personajeDAO.getPersonajes()){
-                if (p.getId().equals(IdPersonajeElegido)){
-                    personajeElegido=p;
-                    break;
-                }
-            }
-            if (personajeElegido == null){
-                System.out.println("Ese personaje no está en la lista, elige una id válida.");
-            }
-        }
         //Eleccion de ciudad
         while (ciudadElegida==null){
             System.out.println("Selecciona la ciudad a la que quieres asignar el personaje: ");
@@ -130,5 +115,64 @@ public class Menu {
         else{
             System.out.println("El nivel del personaje es menor al requerido para entrar en esa ciudad");
         }
+    }
+
+    //Funcion para elegir personaje
+    public Personaje elegirPersonaje(){
+        Personaje personajeElegido = null;
+        //Eleccion de personaje
+        while (personajeElegido==null){
+            System.out.println("Selecciona el personaje:  ");
+            for (Personaje p: personajeDAO.getPersonajes()){
+                System.out.println(p.getId()+ " -> " +p.getNombre());
+            }
+            Integer IdPersonajeElegido= sc.nextInt();
+
+            for (Personaje p: personajeDAO.getPersonajes()){
+                if (p.getId().equals(IdPersonajeElegido)){
+                    personajeElegido=p;
+                    break;
+                }
+            }
+            if (personajeElegido == null){
+                System.out.println("Ese personaje no está en la lista, elige una id válida.");
+            }
+        }
+        return personajeElegido;
+    }
+
+    //Funcion que muestra los items y devuelve el seleccionado por id
+    public Item elegirItem(){
+        Item itemElegido=null;
+        while (itemElegido==null){
+            System.out.println("Selecciona el item: ");
+            for (Item i : personajeDAO.getItemsDAO().getItems()){
+                System.out.println(i.getId()+ " -> " +i.getNombre());
+            }
+            Integer idItemElegido= sc.nextInt();
+
+            for (Item i : personajeDAO.getItemsDAO().getItems()){
+                if (i.getId().equals(idItemElegido)){
+                    itemElegido=i;
+                    break;
+                }
+            }
+            if (itemElegido == null){
+                System.out.println("Ese Item no está en la lista, elige una id válida.");
+            }
+        }
+        return itemElegido;
+
+    }
+
+   //Funcion del menú comprarItems
+    public void comprarItems(Personaje p){
+        Item itemElegido=elegirItem();
+        gestionMundo.comprarItems(p,itemElegido);
+    }
+
+    //Funcion del menu
+    public void menu(){
+
     }
 }
