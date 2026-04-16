@@ -86,4 +86,13 @@ public class HabilidadDAO {
             }
         }
     }
+
+    public void aniadirHabilidadBD(Personaje personaje){
+        for(Habilidad habilidad : personaje.getHabilidades().keySet()){
+            conexionDB.executeUpdate(
+                    "INSERT INTO personajes_habilidades (id_personaje, id_habilidad, equipada_combate)"+
+                    "VALUES (" + personaje.getId() + "," + habilidad.getId() + ", false)"
+            );
+        }
+    }
 }

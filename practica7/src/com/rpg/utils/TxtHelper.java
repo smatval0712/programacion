@@ -36,5 +36,4 @@ public class TxtHelper {
             throw new FormatoInvalidoException("ERROR: al leer el fichero, "+e.getMessage());
         }
     }
-
 }

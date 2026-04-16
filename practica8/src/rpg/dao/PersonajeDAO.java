@@ -85,7 +85,7 @@ public class PersonajeDAO {
     }
 
     public void cargaPersonaje(){
-        ResultSet resultset = conexionDB.executeQuery("SELECT * FROM personajes");
+        ResultSet resultset = conexionDB.executeQuery("SELECT * FROM personajes ORDER BY id ASC");
 
         try {
             while (resultset.next()) {
@@ -153,5 +153,20 @@ public class PersonajeDAO {
         );
     }
 
+    //FUNCION PARA DESTERRAR UN PERSONAJE, LO PONE A NULL EN LA BASE DE DATOS Y EN EL PERSONAJE DE FORMA LOCAL
+    public void desterrarPersonaje(Personaje p) {
+        conexionDB.executeUpdate(
+                "UPDATE personajes SET id_ciudad_actual = NULL WHERE id = " + p.getId()
+        );
+        p.setCiudad(null);
+    }
 
+    public void equiparHabilidad(Personaje p, Habilidad h, boolean equipada) {
+        conexionDB.executeUpdate(
+                "UPDATE personajes_habilidades SET equipada_combate = " + equipada +
+                        " WHERE id_personaje = " + p.getId() +
+                        " AND id_habilidad = " + h.getId()
+        );
+        p.getHabilidades().put(h, equipada);
+    }
 }

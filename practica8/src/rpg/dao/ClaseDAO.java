@@ -15,7 +15,7 @@ public class ClaseDAO {
     public ClaseDAO(){
         this.clases=new ArrayList<>();
         this.conexionDB=new ConexionDB();
-        cargaCiudades();
+        cargaClases();
 
 
     }
@@ -36,7 +36,7 @@ public class ClaseDAO {
         this.conexionDB = conexionDB;
     }
 
-    public void cargaCiudades(){
+    public void cargaClases(){
         ResultSet resultset = conexionDB.executeQuery("SELECT * FROM clases_rpg");
 
         try {

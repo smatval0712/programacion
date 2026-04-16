@@ -54,7 +54,7 @@ public class ItemsDAO {
     }
     public Item getItemById(int idPasado){
         for (Item item : items){
-            if (item.getId() == idPasado){
+            if (item.getId().equals(idPasado)){
                 return item;
             }
         }

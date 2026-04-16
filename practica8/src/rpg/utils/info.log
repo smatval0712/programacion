@@ -1,0 +1,4 @@
+[16/04/2026 22:25:41] [ERROR] Intento de compra fallido: FondosInsuficientesException - Josemi no tiene oro suficiente para comprar Espada de Hierro
+[16/04/2026 22:25:41] [ERROR] Intento de compra fallido: FondosInsuficientesException - Fondos insuficientes: Josemi solo tiene 48 de oro y el item cuesta 200
+[16/04/2026 22:26:19] [ERROR] Intento de equipar fallido: LimiteHabilidadesException - Límite de habilidades alcanzado: Grog el Destructor ya tiene 3 habilidades equipadas.
+[16/04/2026 22:26:53] [ERROR] Intento de viaje fallido: NivelInsuficienteException - Nivel insuficiente: Josemi tiene nivel 1 y la ciudad requiere nivel 10
