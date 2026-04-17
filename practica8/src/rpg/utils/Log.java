@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Log {
 
-    private static final String RUTA_LOG = "/home/sergio/IdeaProjects/programacion/practica8/src/rpg/utils/info.log";
+    private static final String RUTA_LOG = "/home/checo/IdeaProjects/programacion/practica8/src/rpg/utils/info.log";
     private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
     // Metodo privado que escribe una linea en el fichero

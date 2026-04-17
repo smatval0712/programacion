@@ -169,4 +169,11 @@ public class PersonajeDAO {
         );
         p.getHabilidades().put(h, equipada);
     }
+
+    public void actualizarOroYClaseBD(Personaje p){
+        conexionDB.executeUpdate(
+                "UPDATE personajes SET oro = " + p.getOro() +", id_clase= " +p.getClase() +
+                        " WHERE id_personaje = " + p.getId()
+        );
+    }
 }

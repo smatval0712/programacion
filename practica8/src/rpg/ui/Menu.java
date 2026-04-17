@@ -134,12 +134,18 @@ public class Menu {
                 System.out.println("Ciudad no encontrada, por favor elige una id válida.");
             }
         }
+        Integer oroPersonaje=0;
+        if (ciudadElegida.getNivel_minimo_acceso()<2){
+            oroPersonaje=100;
+        }
+        else {
+            oroPersonaje=500;
+        }
 
         Integer vidaMaxima = 100 + razaElegida.getBonificador_vida();
         Integer nivel = 1;
-        Integer oro = 100;
-        Integer idGenerado = personajeDAO.insertarPesonajeEnBD(nombre, nivel, oro, vidaMaxima, razaElegida, claseElegida, ciudadElegida);
-        Personaje personajeCreado = new Personaje(idGenerado, nombre, nivel, oro, vidaMaxima, razaElegida, claseElegida, ciudadElegida);
+        Integer idGenerado = personajeDAO.insertarPesonajeEnBD(nombre, nivel, oroPersonaje, vidaMaxima, razaElegida, claseElegida, ciudadElegida);
+        Personaje personajeCreado = new Personaje(idGenerado, nombre, nivel, oroPersonaje, vidaMaxima, razaElegida, claseElegida, ciudadElegida);
         personajeDAO.getHabilidadDAO().aniadirHabilidadesPersonaje(personajeCreado);
         personajeDAO.getHabilidadDAO().aniadirHabilidadBD(personajeCreado);
         personajeDAO.getPersonajes().add(personajeCreado);
